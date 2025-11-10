@@ -26,6 +26,12 @@ public record ArithmeticExpression(IExpression left, IExpression right, char op)
             default -> throw new ArithmeticException("Unknown operator");
         };
     }
+
+    @Override
+    public IExpression deepCopy() {
+        return new ArithmeticExpression(left.deepCopy(), right.deepCopy(), op);
+    }
+
     private static IntValue divide(int l, int r) {
         if(r == 0){
             throw new ArithmeticException("Division by zero");

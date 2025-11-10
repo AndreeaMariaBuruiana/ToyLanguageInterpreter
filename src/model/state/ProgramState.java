@@ -5,7 +5,7 @@ import model.value.IValue;
 
 public record ProgramState(IExecutionStack<IStatement> executionStack,
                            IDictionary<String, IValue> symbolTable,
-                           IOut<IValue> out, IStatement originalProgram) {
+                           IOut<IValue> out,IFileTable fileTable, IStatement originalProgram) {
 
     @Override
     public String toString() {
@@ -13,6 +13,7 @@ public record ProgramState(IExecutionStack<IStatement> executionStack,
                 "Execution Stack: \n" + executionStack.toString() +
                 "Symbol Table: \n" + symbolTable.toString() +
                 "Output: \n" + out.toString() +
+                "File Table: \n" + fileTable.toString() +
                 "---------------------\n";
     }
 }

@@ -26,4 +26,9 @@ public record LogicExpression(IExpression e1, IExpression e2, String op) impleme
         };
 
     }
+
+    @Override
+    public IExpression deepCopy() {
+        return new LogicExpression(e1.deepCopy(), e2.deepCopy(), op);
+    }
 }

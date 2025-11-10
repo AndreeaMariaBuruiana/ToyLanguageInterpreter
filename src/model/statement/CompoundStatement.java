@@ -14,6 +14,11 @@ public record CompoundStatement(IStatement first, IStatement second) implements 
     }
 
     @Override
+    public IStatement deepCopy() {
+        return new CompoundStatement(first.deepCopy(), second.deepCopy());
+    }
+
+    @Override
     public String toString() {
         return "(" + first.toString() + "; " + second.toString() + ')';
     }

@@ -1,5 +1,7 @@
 package model.state;
 
+import exception.DictionaryException;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,8 +19,16 @@ public class MapDictionary<K,V> implements IDictionary<K,V> {
     }
 
     @Override
-    public boolean containsKey(K key) {
+    public boolean isDefined(K key) {
         return symbolTable.containsKey(key);
+    }
+
+    @Override
+    public void update(K key, V value) {
+        if(!isDefined(key)){
+            throw new DictionaryException("Key not defined!");
+        }
+        symbolTable.put(key, value);
     }
 
     @Override
@@ -33,6 +43,9 @@ public class MapDictionary<K,V> implements IDictionary<K,V> {
         }
         return sb.toString();
     }
+
+
+
 
 
 

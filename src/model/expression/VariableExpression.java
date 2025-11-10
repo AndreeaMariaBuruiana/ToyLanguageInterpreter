@@ -7,9 +7,14 @@ import model.value.IValue;
 public record VariableExpression(String varName) implements IExpression {
     @Override
     public IValue evaluate(IDictionary<String, IValue> symbolTable) {
-        if(!(symbolTable.containsKey(varName))){
+        if(!(symbolTable.isDefined(varName))){
             throw new DictionaryException("The variable " + varName + " is not defined!");
         }
         return symbolTable.lookUp(varName);
+    }
+
+    @Override
+    public IExpression deepCopy() {
+        return new VariableExpression(varName);
     }
 }

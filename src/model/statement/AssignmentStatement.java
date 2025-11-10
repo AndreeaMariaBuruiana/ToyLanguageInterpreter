@@ -10,12 +10,24 @@ public record AssignmentStatement(String valueName, IExpression expression) impl
     public ProgramState execute(ProgramState state) throws MyException {
         var value = expression.evaluate(state.symbolTable());
         var expressionType = value.getType();
-        var variableType = state.symbolTable().lookUp(valueName).getType();
-        if (expressionType != variableType) {
-            throw new MyException("Different types!");
+
+        if (!state.symbolTable().isDefined(valueName)) {
+            throw new MyException("Variable " + valueName + " is not defined!");
         }
+
+        var variableType = state.symbolTable().lookUp(valueName).getType();
+
+        if (!expressionType.equals(variableType)) {
+            throw new MyException("Different types! Cannot assign " + expressionType + " to " + variableType);
+        }
+
         state.symbolTable().put(valueName, value);
         return state;
+    }
+
+    @Override
+    public IStatement deepCopy() {
+        return new AssignmentStatement(valueName,expression.deepCopy());
     }
 
     @Override

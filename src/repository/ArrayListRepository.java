@@ -1,12 +1,24 @@
 package repository;
 
+import exception.FileException;
+import exception.MyException;
 import model.state.ProgramState;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class ArrayListRepository implements IRepository {
-    public final List<ProgramState> programStates = new ArrayList<>();
+    public final List<ProgramState> programStates;
+    public String logFilePath;
+    public ArrayListRepository(List<ProgramState> states,String logFilePath) {
+        this.programStates = states;
+        this.logFilePath = logFilePath;
+    }
     @Override
     public void addProgramState(ProgramState state) {
         programStates.add(state);
@@ -24,5 +36,29 @@ public class ArrayListRepository implements IRepository {
         } else {
             this.programStates.set(0, state);
         }
+    }
+
+    @Override
+    public void logProgramState(ProgramState prg) throws MyException {
+        if(logFilePath == null || logFilePath.isEmpty()) {
+            setLogFilePath();
+        }
+        PrintWriter logFile;
+
+        try{
+            logFile = new PrintWriter(new BufferedWriter(new FileWriter(logFilePath, true)));
+        }catch (IOException e){
+            throw new FileException("Could not open log file: " + logFilePath);
+        }
+        logFile.println(prg.toString());
+        logFile.close();
+
+    }
+
+    public void setLogFilePath() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Log File Path: ");
+        logFilePath = sc.nextLine();
+        sc.close();
     }
 }

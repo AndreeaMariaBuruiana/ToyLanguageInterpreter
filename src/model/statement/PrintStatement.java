@@ -14,6 +14,11 @@ public record PrintStatement(IExpression exp) implements IStatement {
     }
 
     @Override
+    public IStatement deepCopy() {
+        return new PrintStatement(exp.deepCopy());
+    }
+
+    @Override
     public String toString() {
         return "print(" + exp.toString() + ")";
     }
