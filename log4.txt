@@ -1,0 +1,200 @@
+=== Program State ===
+Execution Stack: 
+  (VariableDeclarationStatement[varName=varf, type=String]; (varf = ValueExpression[value=StringValue[val=test.in]]; (OpenRFile(VariableExpression[varName=varf]); (VariableDeclarationStatement[varName=varc, type=Int]; (ReadFile[exp=VariableExpression[varName=varf], varName=varc]; (print(VariableExpression[varName=varc]); (ReadFile[exp=VariableExpression[varName=varf], varName=varc]; (print(VariableExpression[varName=varc]); CloseRFile[exp=VariableExpression[varName=varf]]))))))))
+Symbol Table: 
+  {empty}
+Output: 
+  {empty}
+File Table: 
+{empty}---------------------
+
+=== Program State ===
+Execution Stack: 
+  VariableDeclarationStatement[varName=varf, type=String]
+  (varf = ValueExpression[value=StringValue[val=test.in]]; (OpenRFile(VariableExpression[varName=varf]); (VariableDeclarationStatement[varName=varc, type=Int]; (ReadFile[exp=VariableExpression[varName=varf], varName=varc]; (print(VariableExpression[varName=varc]); (ReadFile[exp=VariableExpression[varName=varf], varName=varc]; (print(VariableExpression[varName=varc]); CloseRFile[exp=VariableExpression[varName=varf]])))))))
+Symbol Table: 
+  {empty}
+Output: 
+  {empty}
+File Table: 
+{empty}---------------------
+
+=== Program State ===
+Execution Stack: 
+  (varf = ValueExpression[value=StringValue[val=test.in]]; (OpenRFile(VariableExpression[varName=varf]); (VariableDeclarationStatement[varName=varc, type=Int]; (ReadFile[exp=VariableExpression[varName=varf], varName=varc]; (print(VariableExpression[varName=varc]); (ReadFile[exp=VariableExpression[varName=varf], varName=varc]; (print(VariableExpression[varName=varc]); CloseRFile[exp=VariableExpression[varName=varf]])))))))
+Symbol Table: 
+  varf -> StringValue[val=]
+Output: 
+  {empty}
+File Table: 
+{empty}---------------------
+
+=== Program State ===
+Execution Stack: 
+  varf = ValueExpression[value=StringValue[val=test.in]]
+  (OpenRFile(VariableExpression[varName=varf]); (VariableDeclarationStatement[varName=varc, type=Int]; (ReadFile[exp=VariableExpression[varName=varf], varName=varc]; (print(VariableExpression[varName=varc]); (ReadFile[exp=VariableExpression[varName=varf], varName=varc]; (print(VariableExpression[varName=varc]); CloseRFile[exp=VariableExpression[varName=varf]]))))))
+Symbol Table: 
+  varf -> StringValue[val=]
+Output: 
+  {empty}
+File Table: 
+{empty}---------------------
+
+=== Program State ===
+Execution Stack: 
+  (OpenRFile(VariableExpression[varName=varf]); (VariableDeclarationStatement[varName=varc, type=Int]; (ReadFile[exp=VariableExpression[varName=varf], varName=varc]; (print(VariableExpression[varName=varc]); (ReadFile[exp=VariableExpression[varName=varf], varName=varc]; (print(VariableExpression[varName=varc]); CloseRFile[exp=VariableExpression[varName=varf]]))))))
+Symbol Table: 
+  varf -> StringValue[val=test.in]
+Output: 
+  {empty}
+File Table: 
+{empty}---------------------
+
+=== Program State ===
+Execution Stack: 
+  OpenRFile(VariableExpression[varName=varf])
+  (VariableDeclarationStatement[varName=varc, type=Int]; (ReadFile[exp=VariableExpression[varName=varf], varName=varc]; (print(VariableExpression[varName=varc]); (ReadFile[exp=VariableExpression[varName=varf], varName=varc]; (print(VariableExpression[varName=varc]); CloseRFile[exp=VariableExpression[varName=varf]])))))
+Symbol Table: 
+  varf -> StringValue[val=test.in]
+Output: 
+  {empty}
+File Table: 
+{empty}---------------------
+
+=== Program State ===
+Execution Stack: 
+  (VariableDeclarationStatement[varName=varc, type=Int]; (ReadFile[exp=VariableExpression[varName=varf], varName=varc]; (print(VariableExpression[varName=varc]); (ReadFile[exp=VariableExpression[varName=varf], varName=varc]; (print(VariableExpression[varName=varc]); CloseRFile[exp=VariableExpression[varName=varf]])))))
+Symbol Table: 
+  varf -> StringValue[val=test.in]
+Output: 
+  {empty}
+File Table: 
+StringValue[val=test.in]---------------------
+
+=== Program State ===
+Execution Stack: 
+  VariableDeclarationStatement[varName=varc, type=Int]
+  (ReadFile[exp=VariableExpression[varName=varf], varName=varc]; (print(VariableExpression[varName=varc]); (ReadFile[exp=VariableExpression[varName=varf], varName=varc]; (print(VariableExpression[varName=varc]); CloseRFile[exp=VariableExpression[varName=varf]]))))
+Symbol Table: 
+  varf -> StringValue[val=test.in]
+Output: 
+  {empty}
+File Table: 
+StringValue[val=test.in]---------------------
+
+=== Program State ===
+Execution Stack: 
+  (ReadFile[exp=VariableExpression[varName=varf], varName=varc]; (print(VariableExpression[varName=varc]); (ReadFile[exp=VariableExpression[varName=varf], varName=varc]; (print(VariableExpression[varName=varc]); CloseRFile[exp=VariableExpression[varName=varf]]))))
+Symbol Table: 
+  varf -> StringValue[val=test.in]
+  varc -> 0
+Output: 
+  {empty}
+File Table: 
+StringValue[val=test.in]---------------------
+
+=== Program State ===
+Execution Stack: 
+  ReadFile[exp=VariableExpression[varName=varf], varName=varc]
+  (print(VariableExpression[varName=varc]); (ReadFile[exp=VariableExpression[varName=varf], varName=varc]; (print(VariableExpression[varName=varc]); CloseRFile[exp=VariableExpression[varName=varf]])))
+Symbol Table: 
+  varf -> StringValue[val=test.in]
+  varc -> 0
+Output: 
+  {empty}
+File Table: 
+StringValue[val=test.in]---------------------
+
+=== Program State ===
+Execution Stack: 
+  (print(VariableExpression[varName=varc]); (ReadFile[exp=VariableExpression[varName=varf], varName=varc]; (print(VariableExpression[varName=varc]); CloseRFile[exp=VariableExpression[varName=varf]])))
+Symbol Table: 
+  varf -> StringValue[val=test.in]
+  varc -> 15
+Output: 
+  {empty}
+File Table: 
+StringValue[val=test.in]---------------------
+
+=== Program State ===
+Execution Stack: 
+  print(VariableExpression[varName=varc])
+  (ReadFile[exp=VariableExpression[varName=varf], varName=varc]; (print(VariableExpression[varName=varc]); CloseRFile[exp=VariableExpression[varName=varf]]))
+Symbol Table: 
+  varf -> StringValue[val=test.in]
+  varc -> 15
+Output: 
+  {empty}
+File Table: 
+StringValue[val=test.in]---------------------
+
+=== Program State ===
+Execution Stack: 
+  (ReadFile[exp=VariableExpression[varName=varf], varName=varc]; (print(VariableExpression[varName=varc]); CloseRFile[exp=VariableExpression[varName=varf]]))
+Symbol Table: 
+  varf -> StringValue[val=test.in]
+  varc -> 15
+Output: 
+  15
+File Table: 
+StringValue[val=test.in]---------------------
+
+=== Program State ===
+Execution Stack: 
+  ReadFile[exp=VariableExpression[varName=varf], varName=varc]
+  (print(VariableExpression[varName=varc]); CloseRFile[exp=VariableExpression[varName=varf]])
+Symbol Table: 
+  varf -> StringValue[val=test.in]
+  varc -> 15
+Output: 
+  15
+File Table: 
+StringValue[val=test.in]---------------------
+
+=== Program State ===
+Execution Stack: 
+  (print(VariableExpression[varName=varc]); CloseRFile[exp=VariableExpression[varName=varf]])
+Symbol Table: 
+  varf -> StringValue[val=test.in]
+  varc -> 20
+Output: 
+  15
+File Table: 
+StringValue[val=test.in]---------------------
+
+=== Program State ===
+Execution Stack: 
+  print(VariableExpression[varName=varc])
+  CloseRFile[exp=VariableExpression[varName=varf]]
+Symbol Table: 
+  varf -> StringValue[val=test.in]
+  varc -> 20
+Output: 
+  15
+File Table: 
+StringValue[val=test.in]---------------------
+
+=== Program State ===
+Execution Stack: 
+  CloseRFile[exp=VariableExpression[varName=varf]]
+Symbol Table: 
+  varf -> StringValue[val=test.in]
+  varc -> 20
+Output: 
+  15
+  20
+File Table: 
+StringValue[val=test.in]---------------------
+
+=== Program State ===
+Execution Stack: 
+  {empty}
+Symbol Table: 
+  varf -> StringValue[val=test.in]
+  varc -> 20
+Output: 
+  15
+  20
+File Table: 
+{empty}---------------------
+
