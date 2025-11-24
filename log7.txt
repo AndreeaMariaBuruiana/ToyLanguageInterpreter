@@ -1,0 +1,135 @@
+=== Program State ===
+Execution Stack: 
+  (VariableDeclarationStatement[varName=v, type=Ref(Int)]; (NewStatement[varName=v, expr=ValueExpression[value=20]]; (print(readHeap(VariableExpression[varName=v])); (WriteHeapStatement[varName=v, expr=ValueExpression[value=30]]; print(ArithmeticExpression[left=readHeap(VariableExpression[varName=v]), right=ValueExpression[value=5], op=+])))))
+Symbol Table: 
+  {empty}
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  VariableDeclarationStatement[varName=v, type=Ref(Int)]
+  (NewStatement[varName=v, expr=ValueExpression[value=20]]; (print(readHeap(VariableExpression[varName=v])); (WriteHeapStatement[varName=v, expr=ValueExpression[value=30]]; print(ArithmeticExpression[left=readHeap(VariableExpression[varName=v]), right=ValueExpression[value=5], op=+]))))
+Symbol Table: 
+  {empty}
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  (NewStatement[varName=v, expr=ValueExpression[value=20]]; (print(readHeap(VariableExpression[varName=v])); (WriteHeapStatement[varName=v, expr=ValueExpression[value=30]]; print(ArithmeticExpression[left=readHeap(VariableExpression[varName=v]), right=ValueExpression[value=5], op=+]))))
+Symbol Table: 
+  v -> RefValue(0, Int)
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  NewStatement[varName=v, expr=ValueExpression[value=20]]
+  (print(readHeap(VariableExpression[varName=v])); (WriteHeapStatement[varName=v, expr=ValueExpression[value=30]]; print(ArithmeticExpression[left=readHeap(VariableExpression[varName=v]), right=ValueExpression[value=5], op=+])))
+Symbol Table: 
+  v -> RefValue(0, Int)
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  (print(readHeap(VariableExpression[varName=v])); (WriteHeapStatement[varName=v, expr=ValueExpression[value=30]]; print(ArithmeticExpression[left=readHeap(VariableExpression[varName=v]), right=ValueExpression[value=5], op=+])))
+Symbol Table: 
+  v -> RefValue(1, Int)
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+1 -> 20
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  print(readHeap(VariableExpression[varName=v]))
+  (WriteHeapStatement[varName=v, expr=ValueExpression[value=30]]; print(ArithmeticExpression[left=readHeap(VariableExpression[varName=v]), right=ValueExpression[value=5], op=+]))
+Symbol Table: 
+  v -> RefValue(1, Int)
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+1 -> 20
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  (WriteHeapStatement[varName=v, expr=ValueExpression[value=30]]; print(ArithmeticExpression[left=readHeap(VariableExpression[varName=v]), right=ValueExpression[value=5], op=+]))
+Symbol Table: 
+  v -> RefValue(1, Int)
+Output: 
+  20
+File Table: 
+{empty}
+Heap: 
+1 -> 20
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  WriteHeapStatement[varName=v, expr=ValueExpression[value=30]]
+  print(ArithmeticExpression[left=readHeap(VariableExpression[varName=v]), right=ValueExpression[value=5], op=+])
+Symbol Table: 
+  v -> RefValue(1, Int)
+Output: 
+  20
+File Table: 
+{empty}
+Heap: 
+1 -> 20
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  print(ArithmeticExpression[left=readHeap(VariableExpression[varName=v]), right=ValueExpression[value=5], op=+])
+Symbol Table: 
+  v -> RefValue(1, Int)
+Output: 
+  20
+File Table: 
+{empty}
+Heap: 
+1 -> 30
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  {empty}
+Symbol Table: 
+  v -> RefValue(1, Int)
+Output: 
+  20
+  35
+File Table: 
+{empty}
+Heap: 
+1 -> 30
+---------------------
+

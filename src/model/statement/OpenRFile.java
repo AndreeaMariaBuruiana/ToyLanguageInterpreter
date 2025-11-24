@@ -14,7 +14,7 @@ public record OpenRFile(IExpression exp) implements IStatement {
 
     @Override
     public ProgramState execute(ProgramState state) throws MyException {
-        var val = exp.evaluate(state.symbolTable());
+        var val = exp.evaluate(state.symbolTable(), state.heap());
         if (!val.getType().toString().equals("String")) {
             throw new MyException("File name expression is not a string!");
         }

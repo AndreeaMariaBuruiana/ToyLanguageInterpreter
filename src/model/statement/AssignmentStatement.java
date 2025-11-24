@@ -8,7 +8,7 @@ public record AssignmentStatement(String valueName, IExpression expression) impl
 
     @Override
     public ProgramState execute(ProgramState state) throws MyException {
-        var value = expression.evaluate(state.symbolTable());
+        var value = expression.evaluate(state.symbolTable(), state.heap());
         var expressionType = value.getType();
 
         if (!state.symbolTable().isDefined(valueName)) {

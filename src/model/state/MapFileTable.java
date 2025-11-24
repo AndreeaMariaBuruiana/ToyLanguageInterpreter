@@ -41,7 +41,7 @@ public class MapFileTable implements IFileTable {
         StringBuilder builder = new StringBuilder();
 
         if (fileTable.isEmpty()) {
-            return "{empty}";
+            return "{empty}\n";
         }
         for (StringValue filename : fileTable.keySet()) {
             builder.append(filename).append("\n");

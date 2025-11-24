@@ -10,7 +10,7 @@ import model.value.BoolValue;
 public record IfStatement(IExpression expression, IStatement thenStatement, IStatement elseStatement) implements IStatement {
     @Override
     public ProgramState execute(ProgramState state) throws MyException {
-        var value = expression.evaluate(state.symbolTable());
+        var value = expression.evaluate(state.symbolTable(), state.heap());
         if(!(value.getType() instanceof BoolType) ) {
             throw new StatementException("If statement is not boolean!");
         }

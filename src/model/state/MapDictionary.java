@@ -3,6 +3,8 @@ package model.state;
 import exception.DictionaryException;
 
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 public class MapDictionary<K,V> implements IDictionary<K,V> {
@@ -29,6 +31,11 @@ public class MapDictionary<K,V> implements IDictionary<K,V> {
             throw new DictionaryException("Key not defined!");
         }
         symbolTable.put(key, value);
+    }
+
+    @Override
+    public List<V> getValues() {
+        return new LinkedList<>(symbolTable.values());
     }
 
     @Override

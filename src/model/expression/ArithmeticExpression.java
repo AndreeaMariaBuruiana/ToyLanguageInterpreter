@@ -2,16 +2,17 @@ package model.expression;
 
 import exception.ArithmeticException;
 import model.state.IDictionary;
+import model.state.IHeap;
 import model.value.IValue;
 import model.value.IntValue;
 
 public record ArithmeticExpression(IExpression left, IExpression right, char op) implements IExpression{
 
     @Override
-    public IValue evaluate(IDictionary<String, IValue> symbolTable) {
+    public IValue evaluate(IDictionary<String, IValue> symbolTable, IHeap<Integer,IValue> heap) {
         IValue v1, v2;
-        v1 = left.evaluate(symbolTable);
-        v2 = right.evaluate(symbolTable);
+        v1 = left.evaluate(symbolTable,heap);
+        v2 = right.evaluate(symbolTable,heap);
         if (!(v1 instanceof IntValue(int leftTerm))) {
             throw new ArithmeticException("Left value is not an integer");
         }

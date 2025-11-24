@@ -16,7 +16,7 @@ public record CloseRFile(IExpression exp) implements IStatement{
 
     @Override
     public ProgramState execute(ProgramState state) throws MyException {
-        var val = exp.evaluate(state.symbolTable());
+        var val = exp.evaluate(state.symbolTable(), state.heap());
         if(!val.getType().equals(new StringType())){
             throw new InvalidTypeException("CloseRFile: expression must evaluate to StringType");
         }

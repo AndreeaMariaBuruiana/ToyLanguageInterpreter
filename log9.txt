@@ -1,0 +1,173 @@
+=== Program State ===
+Execution Stack: 
+  (VariableDeclarationStatement[varName=v, type=Ref(Int)]; (new(v, ValueExpression[value=20]); (VariableDeclarationStatement[varName=a, type=Ref(Ref(Int))]; (new(a, VariableExpression[varName=v]); (new(v, ValueExpression[value=30]); print(readHeap(readHeap(VariableExpression[varName=a]))))))))
+Symbol Table: 
+  {empty}
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  VariableDeclarationStatement[varName=v, type=Ref(Int)]
+  (new(v, ValueExpression[value=20]); (VariableDeclarationStatement[varName=a, type=Ref(Ref(Int))]; (new(a, VariableExpression[varName=v]); (new(v, ValueExpression[value=30]); print(readHeap(readHeap(VariableExpression[varName=a])))))))
+Symbol Table: 
+  {empty}
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  (new(v, ValueExpression[value=20]); (VariableDeclarationStatement[varName=a, type=Ref(Ref(Int))]; (new(a, VariableExpression[varName=v]); (new(v, ValueExpression[value=30]); print(readHeap(readHeap(VariableExpression[varName=a])))))))
+Symbol Table: 
+  v -> RefValue(0, Int)
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  new(v, ValueExpression[value=20])
+  (VariableDeclarationStatement[varName=a, type=Ref(Ref(Int))]; (new(a, VariableExpression[varName=v]); (new(v, ValueExpression[value=30]); print(readHeap(readHeap(VariableExpression[varName=a]))))))
+Symbol Table: 
+  v -> RefValue(0, Int)
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  (VariableDeclarationStatement[varName=a, type=Ref(Ref(Int))]; (new(a, VariableExpression[varName=v]); (new(v, ValueExpression[value=30]); print(readHeap(readHeap(VariableExpression[varName=a]))))))
+Symbol Table: 
+  v -> RefValue(1, Int)
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+1 -> 20
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  VariableDeclarationStatement[varName=a, type=Ref(Ref(Int))]
+  (new(a, VariableExpression[varName=v]); (new(v, ValueExpression[value=30]); print(readHeap(readHeap(VariableExpression[varName=a])))))
+Symbol Table: 
+  v -> RefValue(1, Int)
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+1 -> 20
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  (new(a, VariableExpression[varName=v]); (new(v, ValueExpression[value=30]); print(readHeap(readHeap(VariableExpression[varName=a])))))
+Symbol Table: 
+  a -> RefValue(0, Ref(Int))
+  v -> RefValue(1, Int)
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+1 -> 20
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  new(a, VariableExpression[varName=v])
+  (new(v, ValueExpression[value=30]); print(readHeap(readHeap(VariableExpression[varName=a]))))
+Symbol Table: 
+  a -> RefValue(0, Ref(Int))
+  v -> RefValue(1, Int)
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+1 -> 20
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  (new(v, ValueExpression[value=30]); print(readHeap(readHeap(VariableExpression[varName=a]))))
+Symbol Table: 
+  a -> RefValue(2, Ref(Int))
+  v -> RefValue(1, Int)
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+1 -> 20
+2 -> RefValue(1, Int)
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  new(v, ValueExpression[value=30])
+  print(readHeap(readHeap(VariableExpression[varName=a])))
+Symbol Table: 
+  a -> RefValue(2, Ref(Int))
+  v -> RefValue(1, Int)
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+1 -> 20
+2 -> RefValue(1, Int)
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  print(readHeap(readHeap(VariableExpression[varName=a])))
+Symbol Table: 
+  a -> RefValue(2, Ref(Int))
+  v -> RefValue(3, Int)
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+1 -> 20
+2 -> RefValue(1, Int)
+3 -> 30
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  {empty}
+Symbol Table: 
+  a -> RefValue(2, Ref(Int))
+  v -> RefValue(3, Int)
+Output: 
+  20
+File Table: 
+{empty}
+Heap: 
+1 -> 20
+2 -> RefValue(1, Int)
+3 -> 30
+---------------------
+

@@ -1,0 +1,372 @@
+=== Program State ===
+Execution Stack: 
+  (VariableDeclarationStatement[varName=v, type=Int]; (v = ValueExpression[value=4]; (while(RelationalExpression[e1=VariableExpression[varName=v], e2=ValueExpression[value=0], op=>]) {(print(VariableExpression[varName=v]); v = ArithmeticExpression[left=VariableExpression[varName=v], right=ValueExpression[value=1], op=-])}; print(VariableExpression[varName=v]))))
+Symbol Table: 
+  {empty}
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  VariableDeclarationStatement[varName=v, type=Int]
+  (v = ValueExpression[value=4]; (while(RelationalExpression[e1=VariableExpression[varName=v], e2=ValueExpression[value=0], op=>]) {(print(VariableExpression[varName=v]); v = ArithmeticExpression[left=VariableExpression[varName=v], right=ValueExpression[value=1], op=-])}; print(VariableExpression[varName=v])))
+Symbol Table: 
+  {empty}
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  (v = ValueExpression[value=4]; (while(RelationalExpression[e1=VariableExpression[varName=v], e2=ValueExpression[value=0], op=>]) {(print(VariableExpression[varName=v]); v = ArithmeticExpression[left=VariableExpression[varName=v], right=ValueExpression[value=1], op=-])}; print(VariableExpression[varName=v])))
+Symbol Table: 
+  v -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  v = ValueExpression[value=4]
+  (while(RelationalExpression[e1=VariableExpression[varName=v], e2=ValueExpression[value=0], op=>]) {(print(VariableExpression[varName=v]); v = ArithmeticExpression[left=VariableExpression[varName=v], right=ValueExpression[value=1], op=-])}; print(VariableExpression[varName=v]))
+Symbol Table: 
+  v -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  (while(RelationalExpression[e1=VariableExpression[varName=v], e2=ValueExpression[value=0], op=>]) {(print(VariableExpression[varName=v]); v = ArithmeticExpression[left=VariableExpression[varName=v], right=ValueExpression[value=1], op=-])}; print(VariableExpression[varName=v]))
+Symbol Table: 
+  v -> 4
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  while(RelationalExpression[e1=VariableExpression[varName=v], e2=ValueExpression[value=0], op=>]) {(print(VariableExpression[varName=v]); v = ArithmeticExpression[left=VariableExpression[varName=v], right=ValueExpression[value=1], op=-])}
+  print(VariableExpression[varName=v])
+Symbol Table: 
+  v -> 4
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  (print(VariableExpression[varName=v]); v = ArithmeticExpression[left=VariableExpression[varName=v], right=ValueExpression[value=1], op=-])
+  while(RelationalExpression[e1=VariableExpression[varName=v], e2=ValueExpression[value=0], op=>]) {(print(VariableExpression[varName=v]); v = ArithmeticExpression[left=VariableExpression[varName=v], right=ValueExpression[value=1], op=-])}
+  print(VariableExpression[varName=v])
+Symbol Table: 
+  v -> 4
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  print(VariableExpression[varName=v])
+  v = ArithmeticExpression[left=VariableExpression[varName=v], right=ValueExpression[value=1], op=-]
+  while(RelationalExpression[e1=VariableExpression[varName=v], e2=ValueExpression[value=0], op=>]) {(print(VariableExpression[varName=v]); v = ArithmeticExpression[left=VariableExpression[varName=v], right=ValueExpression[value=1], op=-])}
+  print(VariableExpression[varName=v])
+Symbol Table: 
+  v -> 4
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  v = ArithmeticExpression[left=VariableExpression[varName=v], right=ValueExpression[value=1], op=-]
+  while(RelationalExpression[e1=VariableExpression[varName=v], e2=ValueExpression[value=0], op=>]) {(print(VariableExpression[varName=v]); v = ArithmeticExpression[left=VariableExpression[varName=v], right=ValueExpression[value=1], op=-])}
+  print(VariableExpression[varName=v])
+Symbol Table: 
+  v -> 4
+Output: 
+  4
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  while(RelationalExpression[e1=VariableExpression[varName=v], e2=ValueExpression[value=0], op=>]) {(print(VariableExpression[varName=v]); v = ArithmeticExpression[left=VariableExpression[varName=v], right=ValueExpression[value=1], op=-])}
+  print(VariableExpression[varName=v])
+Symbol Table: 
+  v -> 3
+Output: 
+  4
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  (print(VariableExpression[varName=v]); v = ArithmeticExpression[left=VariableExpression[varName=v], right=ValueExpression[value=1], op=-])
+  while(RelationalExpression[e1=VariableExpression[varName=v], e2=ValueExpression[value=0], op=>]) {(print(VariableExpression[varName=v]); v = ArithmeticExpression[left=VariableExpression[varName=v], right=ValueExpression[value=1], op=-])}
+  print(VariableExpression[varName=v])
+Symbol Table: 
+  v -> 3
+Output: 
+  4
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  print(VariableExpression[varName=v])
+  v = ArithmeticExpression[left=VariableExpression[varName=v], right=ValueExpression[value=1], op=-]
+  while(RelationalExpression[e1=VariableExpression[varName=v], e2=ValueExpression[value=0], op=>]) {(print(VariableExpression[varName=v]); v = ArithmeticExpression[left=VariableExpression[varName=v], right=ValueExpression[value=1], op=-])}
+  print(VariableExpression[varName=v])
+Symbol Table: 
+  v -> 3
+Output: 
+  4
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  v = ArithmeticExpression[left=VariableExpression[varName=v], right=ValueExpression[value=1], op=-]
+  while(RelationalExpression[e1=VariableExpression[varName=v], e2=ValueExpression[value=0], op=>]) {(print(VariableExpression[varName=v]); v = ArithmeticExpression[left=VariableExpression[varName=v], right=ValueExpression[value=1], op=-])}
+  print(VariableExpression[varName=v])
+Symbol Table: 
+  v -> 3
+Output: 
+  4
+  3
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  while(RelationalExpression[e1=VariableExpression[varName=v], e2=ValueExpression[value=0], op=>]) {(print(VariableExpression[varName=v]); v = ArithmeticExpression[left=VariableExpression[varName=v], right=ValueExpression[value=1], op=-])}
+  print(VariableExpression[varName=v])
+Symbol Table: 
+  v -> 2
+Output: 
+  4
+  3
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  (print(VariableExpression[varName=v]); v = ArithmeticExpression[left=VariableExpression[varName=v], right=ValueExpression[value=1], op=-])
+  while(RelationalExpression[e1=VariableExpression[varName=v], e2=ValueExpression[value=0], op=>]) {(print(VariableExpression[varName=v]); v = ArithmeticExpression[left=VariableExpression[varName=v], right=ValueExpression[value=1], op=-])}
+  print(VariableExpression[varName=v])
+Symbol Table: 
+  v -> 2
+Output: 
+  4
+  3
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  print(VariableExpression[varName=v])
+  v = ArithmeticExpression[left=VariableExpression[varName=v], right=ValueExpression[value=1], op=-]
+  while(RelationalExpression[e1=VariableExpression[varName=v], e2=ValueExpression[value=0], op=>]) {(print(VariableExpression[varName=v]); v = ArithmeticExpression[left=VariableExpression[varName=v], right=ValueExpression[value=1], op=-])}
+  print(VariableExpression[varName=v])
+Symbol Table: 
+  v -> 2
+Output: 
+  4
+  3
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  v = ArithmeticExpression[left=VariableExpression[varName=v], right=ValueExpression[value=1], op=-]
+  while(RelationalExpression[e1=VariableExpression[varName=v], e2=ValueExpression[value=0], op=>]) {(print(VariableExpression[varName=v]); v = ArithmeticExpression[left=VariableExpression[varName=v], right=ValueExpression[value=1], op=-])}
+  print(VariableExpression[varName=v])
+Symbol Table: 
+  v -> 2
+Output: 
+  4
+  3
+  2
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  while(RelationalExpression[e1=VariableExpression[varName=v], e2=ValueExpression[value=0], op=>]) {(print(VariableExpression[varName=v]); v = ArithmeticExpression[left=VariableExpression[varName=v], right=ValueExpression[value=1], op=-])}
+  print(VariableExpression[varName=v])
+Symbol Table: 
+  v -> 1
+Output: 
+  4
+  3
+  2
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  (print(VariableExpression[varName=v]); v = ArithmeticExpression[left=VariableExpression[varName=v], right=ValueExpression[value=1], op=-])
+  while(RelationalExpression[e1=VariableExpression[varName=v], e2=ValueExpression[value=0], op=>]) {(print(VariableExpression[varName=v]); v = ArithmeticExpression[left=VariableExpression[varName=v], right=ValueExpression[value=1], op=-])}
+  print(VariableExpression[varName=v])
+Symbol Table: 
+  v -> 1
+Output: 
+  4
+  3
+  2
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  print(VariableExpression[varName=v])
+  v = ArithmeticExpression[left=VariableExpression[varName=v], right=ValueExpression[value=1], op=-]
+  while(RelationalExpression[e1=VariableExpression[varName=v], e2=ValueExpression[value=0], op=>]) {(print(VariableExpression[varName=v]); v = ArithmeticExpression[left=VariableExpression[varName=v], right=ValueExpression[value=1], op=-])}
+  print(VariableExpression[varName=v])
+Symbol Table: 
+  v -> 1
+Output: 
+  4
+  3
+  2
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  v = ArithmeticExpression[left=VariableExpression[varName=v], right=ValueExpression[value=1], op=-]
+  while(RelationalExpression[e1=VariableExpression[varName=v], e2=ValueExpression[value=0], op=>]) {(print(VariableExpression[varName=v]); v = ArithmeticExpression[left=VariableExpression[varName=v], right=ValueExpression[value=1], op=-])}
+  print(VariableExpression[varName=v])
+Symbol Table: 
+  v -> 1
+Output: 
+  4
+  3
+  2
+  1
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  while(RelationalExpression[e1=VariableExpression[varName=v], e2=ValueExpression[value=0], op=>]) {(print(VariableExpression[varName=v]); v = ArithmeticExpression[left=VariableExpression[varName=v], right=ValueExpression[value=1], op=-])}
+  print(VariableExpression[varName=v])
+Symbol Table: 
+  v -> 0
+Output: 
+  4
+  3
+  2
+  1
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  print(VariableExpression[varName=v])
+Symbol Table: 
+  v -> 0
+Output: 
+  4
+  3
+  2
+  1
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+Execution Stack: 
+  {empty}
+Symbol Table: 
+  v -> 0
+Output: 
+  4
+  3
+  2
+  1
+  0
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+

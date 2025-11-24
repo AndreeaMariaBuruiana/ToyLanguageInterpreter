@@ -60,3 +60,65 @@ Output:
 File Table: 
 {empty}---------------------
 
+=== Program State ===
+Execution Stack: 
+  (VariableDeclarationStatement[varName=v, type=Int]; (v = ValueExpression[value=2]; print(VariableExpression[varName=v])))
+Symbol Table: 
+  {empty}
+Output: 
+  {empty}
+File Table: 
+{empty}---------------------
+
+=== Program State ===
+Execution Stack: 
+  VariableDeclarationStatement[varName=v, type=Int]
+  (v = ValueExpression[value=2]; print(VariableExpression[varName=v]))
+Symbol Table: 
+  {empty}
+Output: 
+  {empty}
+File Table: 
+{empty}---------------------
+
+=== Program State ===
+Execution Stack: 
+  (v = ValueExpression[value=2]; print(VariableExpression[varName=v]))
+Symbol Table: 
+  v -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}---------------------
+
+=== Program State ===
+Execution Stack: 
+  v = ValueExpression[value=2]
+  print(VariableExpression[varName=v])
+Symbol Table: 
+  v -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}---------------------
+
+=== Program State ===
+Execution Stack: 
+  print(VariableExpression[varName=v])
+Symbol Table: 
+  v -> 2
+Output: 
+  {empty}
+File Table: 
+{empty}---------------------
+
+=== Program State ===
+Execution Stack: 
+  {empty}
+Symbol Table: 
+  v -> 2
+Output: 
+  2
+File Table: 
+{empty}---------------------
+

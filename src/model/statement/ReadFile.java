@@ -27,7 +27,7 @@ public record ReadFile(IExpression exp, String varName) implements IStatement {
             throw new InvalidTypeException("Variable " + varName + " is not of type int!");
         }
 
-        IValue fileNameVal = exp.evaluate(state.symbolTable());
+        IValue fileNameVal = exp.evaluate(state.symbolTable(), state.heap());
         if(!fileNameVal.getType().equals(new StringType())){
             throw new InvalidTypeException("Variable " + varName + " is not of type String!");
         }
