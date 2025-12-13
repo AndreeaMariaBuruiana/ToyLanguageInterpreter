@@ -8,7 +8,26 @@ import model.statement.IStatement;
 import model.value.IValue;
 import repository.IRepository;
 
-public record Controller(IRepository repository, boolean displayFlag) {
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+
+public class Controller {
+
+    private IRepository repository;
+    private boolean displayFlag;
+    private ExecutorService executor;
+
+    public Controller(IRepository repository,boolean displayFlag) {
+        this.repository = repository;
+        this.displayFlag = displayFlag;
+        this.executor = Executors.newFixedThreadPool(2);
+    }
     public void addProgramState(IStatement program) {
         var executionStack = new LinkedListExecutionStack<IStatement>();
         executionStack.push(program);
@@ -16,49 +35,73 @@ public record Controller(IRepository repository, boolean displayFlag) {
                 new ArrayListOut<IValue>(), new MapFileTable(), new MyHeap<>(), program));
     }
 
-    private ProgramState executeOneStep(ProgramState programState) {
-        IExecutionStack<IStatement> executionStack = programState.executionStack();
-        if (executionStack.isEmpty()) {
-            throw new EmptyStackException("Execution stack is empty.");
-        }
-        IStatement statement = executionStack.pop();
-        return statement.execute(programState);
+    void oneStepForAllPrograms(List<ProgramState> prgList) throws InterruptedException {
+        prgList.forEach(prg -> {
+            try {
+                repository.logProgramState(prg);
+            } catch (MyException e) {
+                System.out.println(e.getMessage());
+            }
+        });
+
+        List<Callable<ProgramState>> callList = prgList.stream()
+                .map((ProgramState p) -> (Callable<ProgramState>) (() -> {
+                    try {
+                        return p.oneStep();
+                    } catch (MyException e) {
+                        System.out.println(e.getMessage());
+                        return null;
+                    }
+                }))
+                .toList();
+
+        List<ProgramState> newPrgList = executor.invokeAll(callList).stream()
+                .map(future -> {
+                    try {
+                        return future.get();
+                    } catch (InterruptedException | ExecutionException e) {
+                        System.out.println(e.getMessage());
+                        return null;
+                    }
+                })
+                .filter(p -> p != null)
+                .toList();
+
+        prgList.addAll(newPrgList);
+        prgList.forEach(prg -> repository.logProgramState(prg));
+        repository.setProgramList(prgList);
+
     }
 
-    public void executeAllSteps() {
-        var programState = repository.getCurrentState();
 
-        // Log the initial state
-        if(displayFlag) {
-            repository.logProgramState(programState);
-        }
 
-        try {
-            while (!programState.executionStack().isEmpty()) {
-                // 1. Execute one step
-                programState = executeOneStep(programState);
+    public void executeAllSteps() throws InterruptedException {
+        executor = Executors.newFixedThreadPool(2);
+        List<ProgramState> prgList = removeCompletedPrograms(repository.getProgramList());
 
-                // 2. Log the state after execution
-                if(displayFlag) {
-                    repository.logProgramState(programState);
-                }
+        while(prgList.size()>0) {
+            IHeap<Integer,IValue> heap = prgList.get(0).heap();
+            Set<Integer> usedAddresses = prgList.stream()
+                    .flatMap(p->p.getUsedAddresses().stream())
+                    .collect(Collectors.toSet());
+            heap.setHeap(heap.safeGarbageCollector(usedAddresses,heap.getHeap()));
 
-                // 3. Run Garbage Collector (Try commenting this out if it still crashes!)
-                IHeap<Integer,IValue> heap = programState.heap();
-                heap.setHeap(heap.safeGarbageCollector(
-                        programState.getUsedAddresses(),
-                        heap.getHeap()
-                ));
+            try{
+                oneStepForAllPrograms(prgList);
+            }catch (InterruptedException e){
+                throw new MyException("Program execution interrupted: " + e.getMessage());
             }
-        } catch (MyException e) {
-            // THIS IS THE MISSING PIECE
-            System.out.println("The program crashed: " + e.getMessage());
-            //e.printStackTrace(); // This will print the red text in your console telling you the line number
+            prgList = removeCompletedPrograms(repository.getProgramList());
         }
+        executor.shutdownNow();
+        repository.setProgramList(prgList);
 
-        if (!displayFlag) {
-            repository.logProgramState(programState);
-        }
+    }
+
+    public List<ProgramState> removeCompletedPrograms(List<ProgramState> programStates) {
+        return programStates.stream()
+                .filter(p -> p.isNotCompleted())
+                .collect(Collectors.toList());
     }
 
 }

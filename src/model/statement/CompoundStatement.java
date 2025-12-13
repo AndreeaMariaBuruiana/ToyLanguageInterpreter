@@ -10,7 +10,7 @@ public record CompoundStatement(IStatement first, IStatement second) implements 
         IExecutionStack<IStatement> stack = state.executionStack();
         stack.push(second);
         stack.push(first);
-        return state;
+        return null;
     }
 
     @Override

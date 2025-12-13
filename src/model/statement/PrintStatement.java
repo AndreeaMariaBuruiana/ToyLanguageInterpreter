@@ -10,7 +10,7 @@ public record PrintStatement(IExpression exp) implements IStatement {
     @Override
     public ProgramState execute(ProgramState state) throws MyException {
         state.out().add(exp.evaluate(state.symbolTable(), state.heap()));
-        return state;
+        return null;
     }
 
     @Override

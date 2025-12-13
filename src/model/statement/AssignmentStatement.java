@@ -22,7 +22,7 @@ public record AssignmentStatement(String valueName, IExpression expression) impl
         }
 
         state.symbolTable().put(valueName, value);
-        return state;
+        return null;
     }
 
     @Override

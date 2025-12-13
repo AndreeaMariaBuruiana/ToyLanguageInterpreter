@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ArrayListRepository implements IRepository {
-    public final List<ProgramState> programStates;
+    public  List<ProgramState> programStates;
     public String logFilePath;
     public ArrayListRepository(List<ProgramState> states,String logFilePath) {
         this.programStates = states;
@@ -53,6 +53,16 @@ public class ArrayListRepository implements IRepository {
         logFile.println(prg.toString());
         logFile.close();
 
+    }
+
+    @Override
+    public List<ProgramState> getProgramList() {
+        return programStates;
+    }
+
+    @Override
+    public void setProgramList(List<ProgramState> programStates) {
+        this.programStates = programStates;
     }
 
     public void setLogFilePath() {

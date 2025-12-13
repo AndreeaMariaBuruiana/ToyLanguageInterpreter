@@ -7,6 +7,7 @@ import model.state.*;
 import model.statement.*;
 import model.type.BoolType;
 import model.type.IntType;
+import model.type.RefType;
 import model.type.StringType;
 import model.value.BoolValue;
 import model.value.IValue;
@@ -19,6 +20,8 @@ import view.command.RunExample;
 
 import java.io.BufferedReader;
 import java.util.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class View {
 
@@ -145,7 +148,7 @@ public class View {
                         new CompoundStatement(
                                 new PrintStatement(new ReadHeapExpression(new VariableExpression("v"))),
                                 new CompoundStatement(
-                                        new WriteHeapStatement("v", new ValueExpression(new IntValue(30))),
+                                        new NewStatement("v", new ValueExpression(new IntValue(30))),
                                         new PrintStatement(
                                                 new ArithmeticExpression(
                                                         new ReadHeapExpression(new VariableExpression("v")),
@@ -212,6 +215,45 @@ public class View {
         );
     }
 
+    private static IStatement createExample10() {
+        // int v; Ref int a; v=10; new(a,22);
+        // fork(wH(a,30);v=32;print(v);print(rH(a)));
+        // print(v);print(rH(a))
+        return new CompoundStatement(
+                new VariableDeclarationStatement("v", new IntType()),
+                new CompoundStatement(
+                        new VariableDeclarationStatement("a", new RefType(new IntType())),
+                        new CompoundStatement(
+                                new AssignmentStatement("v", new ValueExpression(new IntValue(10))),
+                                new CompoundStatement(
+                                        new NewStatement("a", new ValueExpression(new IntValue(22))),
+                                        new CompoundStatement(
+                                                new ForkStatement(
+                                                        new CompoundStatement(
+                                                                new WriteHeapStatement("a", new ValueExpression(new IntValue(30))),
+                                                                new CompoundStatement(
+                                                                        new AssignmentStatement("v", new ValueExpression(new IntValue(32))),
+                                                                        new CompoundStatement(
+                                                                                new PrintStatement(new VariableExpression("v")),
+                                                                                new PrintStatement(new ReadHeapExpression(new VariableExpression("a")))
+                                                                        )
+                                                                )
+                                                        )
+                                                ),
+                                                new CompoundStatement(
+                                                        new PrintStatement(new VariableExpression("v")),
+                                                        new PrintStatement(new ReadHeapExpression(new VariableExpression("a")))
+                                                )
+                                        )
+                                )
+                        )
+        )
+        )
+                ;
+
+
+    }
+
     private static ProgramState createPrgState(IStatement originalProgram) {
         IExecutionStack<IStatement> exeStack = new LinkedListExecutionStack<>();
         IDictionary<String, IValue> symTable = new MapDictionary<>();
@@ -244,6 +286,7 @@ public class View {
         menu.addCommand(new RunExample("7", createExample7(),createController(createExample7(), "log7.txt")));
         menu.addCommand(new RunExample("8", createExample8(),createController(createExample8(), "log8.txt")));
         menu.addCommand(new RunExample("9", createExample9(),createController(createExample9(), "log9.txt")));
+        menu.addCommand(new RunExample("10", createExample10(),createController(createExample10(), "log10.txt")));
         menu.addCommand(new ExitCommand("0","Exit"));
 
         menu.show();

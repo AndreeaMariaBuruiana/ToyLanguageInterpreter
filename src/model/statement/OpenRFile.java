@@ -28,7 +28,7 @@ public record OpenRFile(IExpression exp) implements IStatement {
         }catch(Exception e){
             throw new MyException("File not found!");
         }
-        return state;
+        return null;
 
     }
 

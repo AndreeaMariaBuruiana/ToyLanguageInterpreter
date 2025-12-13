@@ -27,6 +27,8 @@ public class RunExample extends Command {
 
         }catch (MyException e){
             System.out.println("Error during execution: " + e.getMessage());
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
     }
 

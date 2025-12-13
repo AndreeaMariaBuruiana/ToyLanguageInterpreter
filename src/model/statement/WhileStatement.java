@@ -17,7 +17,7 @@ public record WhileStatement(IExpression expr, IStatement statement) implements 
             state.executionStack().push(this);
             state.executionStack().push(statement);
         }
-        return state;
+        return null;
 
     }
 

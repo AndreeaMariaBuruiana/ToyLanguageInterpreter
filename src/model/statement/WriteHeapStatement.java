@@ -27,7 +27,7 @@ public record WriteHeapStatement(String varName, IExpression expr) implements IS
             throw new MyException("Type mismatch: variable "+varName+" and expression do not have the same type");
         }
         state.heap().put(addr, value);
-        return state;
+        return null;
 
     }
 

@@ -20,7 +20,7 @@ public record IfStatement(IExpression expression, IStatement thenStatement, ISta
         } else {
             state.executionStack().push(elseStatement);
         }
-        return state;
+        return null;
 
     }
 

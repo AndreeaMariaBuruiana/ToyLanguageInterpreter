@@ -1,0 +1,640 @@
+=== Program State ===
+ID: 10
+Execution Stack: 
+  (VariableDeclarationStatement[varName=v, type=Int]; (VariableDeclarationStatement[varName=a, type=Ref(Int)]; (v = ValueExpression[value=10]; (new(a, ValueExpression[value=22]); (fork((WriteHeapStmt(a, ValueExpression[value=30]); (v = ValueExpression[value=32]; (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a])))))); (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a]))))))))
+Symbol Table: 
+  {empty}
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 10
+Execution Stack: 
+  VariableDeclarationStatement[varName=v, type=Int]
+  (VariableDeclarationStatement[varName=a, type=Ref(Int)]; (v = ValueExpression[value=10]; (new(a, ValueExpression[value=22]); (fork((WriteHeapStmt(a, ValueExpression[value=30]); (v = ValueExpression[value=32]; (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a])))))); (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a])))))))
+Symbol Table: 
+  {empty}
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 10
+Execution Stack: 
+  VariableDeclarationStatement[varName=v, type=Int]
+  (VariableDeclarationStatement[varName=a, type=Ref(Int)]; (v = ValueExpression[value=10]; (new(a, ValueExpression[value=22]); (fork((WriteHeapStmt(a, ValueExpression[value=30]); (v = ValueExpression[value=32]; (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a])))))); (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a])))))))
+Symbol Table: 
+  {empty}
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 10
+Execution Stack: 
+  (VariableDeclarationStatement[varName=a, type=Ref(Int)]; (v = ValueExpression[value=10]; (new(a, ValueExpression[value=22]); (fork((WriteHeapStmt(a, ValueExpression[value=30]); (v = ValueExpression[value=32]; (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a])))))); (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a])))))))
+Symbol Table: 
+  v -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 10
+Execution Stack: 
+  (VariableDeclarationStatement[varName=a, type=Ref(Int)]; (v = ValueExpression[value=10]; (new(a, ValueExpression[value=22]); (fork((WriteHeapStmt(a, ValueExpression[value=30]); (v = ValueExpression[value=32]; (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a])))))); (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a])))))))
+Symbol Table: 
+  v -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 10
+Execution Stack: 
+  VariableDeclarationStatement[varName=a, type=Ref(Int)]
+  (v = ValueExpression[value=10]; (new(a, ValueExpression[value=22]); (fork((WriteHeapStmt(a, ValueExpression[value=30]); (v = ValueExpression[value=32]; (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a])))))); (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a]))))))
+Symbol Table: 
+  v -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 10
+Execution Stack: 
+  VariableDeclarationStatement[varName=a, type=Ref(Int)]
+  (v = ValueExpression[value=10]; (new(a, ValueExpression[value=22]); (fork((WriteHeapStmt(a, ValueExpression[value=30]); (v = ValueExpression[value=32]; (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a])))))); (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a]))))))
+Symbol Table: 
+  v -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 10
+Execution Stack: 
+  (v = ValueExpression[value=10]; (new(a, ValueExpression[value=22]); (fork((WriteHeapStmt(a, ValueExpression[value=30]); (v = ValueExpression[value=32]; (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a])))))); (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a]))))))
+Symbol Table: 
+  a -> RefValue(0, Int)
+  v -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 10
+Execution Stack: 
+  (v = ValueExpression[value=10]; (new(a, ValueExpression[value=22]); (fork((WriteHeapStmt(a, ValueExpression[value=30]); (v = ValueExpression[value=32]; (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a])))))); (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a]))))))
+Symbol Table: 
+  a -> RefValue(0, Int)
+  v -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 10
+Execution Stack: 
+  v = ValueExpression[value=10]
+  (new(a, ValueExpression[value=22]); (fork((WriteHeapStmt(a, ValueExpression[value=30]); (v = ValueExpression[value=32]; (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a])))))); (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a])))))
+Symbol Table: 
+  a -> RefValue(0, Int)
+  v -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 10
+Execution Stack: 
+  v = ValueExpression[value=10]
+  (new(a, ValueExpression[value=22]); (fork((WriteHeapStmt(a, ValueExpression[value=30]); (v = ValueExpression[value=32]; (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a])))))); (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a])))))
+Symbol Table: 
+  a -> RefValue(0, Int)
+  v -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 10
+Execution Stack: 
+  (new(a, ValueExpression[value=22]); (fork((WriteHeapStmt(a, ValueExpression[value=30]); (v = ValueExpression[value=32]; (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a])))))); (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a])))))
+Symbol Table: 
+  a -> RefValue(0, Int)
+  v -> 10
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 10
+Execution Stack: 
+  (new(a, ValueExpression[value=22]); (fork((WriteHeapStmt(a, ValueExpression[value=30]); (v = ValueExpression[value=32]; (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a])))))); (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a])))))
+Symbol Table: 
+  a -> RefValue(0, Int)
+  v -> 10
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 10
+Execution Stack: 
+  new(a, ValueExpression[value=22])
+  (fork((WriteHeapStmt(a, ValueExpression[value=30]); (v = ValueExpression[value=32]; (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a])))))); (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a]))))
+Symbol Table: 
+  a -> RefValue(0, Int)
+  v -> 10
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 10
+Execution Stack: 
+  new(a, ValueExpression[value=22])
+  (fork((WriteHeapStmt(a, ValueExpression[value=30]); (v = ValueExpression[value=32]; (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a])))))); (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a]))))
+Symbol Table: 
+  a -> RefValue(0, Int)
+  v -> 10
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 10
+Execution Stack: 
+  (fork((WriteHeapStmt(a, ValueExpression[value=30]); (v = ValueExpression[value=32]; (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a])))))); (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a]))))
+Symbol Table: 
+  a -> RefValue(1, Int)
+  v -> 10
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+1 -> 22
+---------------------
+
+=== Program State ===
+ID: 10
+Execution Stack: 
+  (fork((WriteHeapStmt(a, ValueExpression[value=30]); (v = ValueExpression[value=32]; (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a])))))); (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a]))))
+Symbol Table: 
+  a -> RefValue(1, Int)
+  v -> 10
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+1 -> 22
+---------------------
+
+=== Program State ===
+ID: 10
+Execution Stack: 
+  fork((WriteHeapStmt(a, ValueExpression[value=30]); (v = ValueExpression[value=32]; (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a]))))))
+  (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a])))
+Symbol Table: 
+  a -> RefValue(1, Int)
+  v -> 10
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+1 -> 22
+---------------------
+
+=== Program State ===
+ID: 10
+Execution Stack: 
+  fork((WriteHeapStmt(a, ValueExpression[value=30]); (v = ValueExpression[value=32]; (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a]))))))
+  (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a])))
+Symbol Table: 
+  a -> RefValue(1, Int)
+  v -> 10
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+1 -> 22
+---------------------
+
+=== Program State ===
+ID: 10
+Execution Stack: 
+  (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a])))
+Symbol Table: 
+  a -> RefValue(1, Int)
+  v -> 10
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+1 -> 22
+---------------------
+
+=== Program State ===
+ID: 11
+Execution Stack: 
+  (WriteHeapStmt(a, ValueExpression[value=30]); (v = ValueExpression[value=32]; (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a])))))
+Symbol Table: 
+  a -> RefValue(1, Int)
+  v -> 10
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+1 -> 22
+---------------------
+
+=== Program State ===
+ID: 10
+Execution Stack: 
+  (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a])))
+Symbol Table: 
+  a -> RefValue(1, Int)
+  v -> 10
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+1 -> 22
+---------------------
+
+=== Program State ===
+ID: 11
+Execution Stack: 
+  (WriteHeapStmt(a, ValueExpression[value=30]); (v = ValueExpression[value=32]; (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a])))))
+Symbol Table: 
+  a -> RefValue(1, Int)
+  v -> 10
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+1 -> 22
+---------------------
+
+=== Program State ===
+ID: 10
+Execution Stack: 
+  print(VariableExpression[varName=v])
+  print(readHeap(VariableExpression[varName=a]))
+Symbol Table: 
+  a -> RefValue(1, Int)
+  v -> 10
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+1 -> 22
+---------------------
+
+=== Program State ===
+ID: 11
+Execution Stack: 
+  WriteHeapStmt(a, ValueExpression[value=30])
+  (v = ValueExpression[value=32]; (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a]))))
+Symbol Table: 
+  a -> RefValue(1, Int)
+  v -> 10
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+1 -> 22
+---------------------
+
+=== Program State ===
+ID: 10
+Execution Stack: 
+  print(VariableExpression[varName=v])
+  print(readHeap(VariableExpression[varName=a]))
+Symbol Table: 
+  a -> RefValue(1, Int)
+  v -> 10
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+1 -> 22
+---------------------
+
+=== Program State ===
+ID: 11
+Execution Stack: 
+  WriteHeapStmt(a, ValueExpression[value=30])
+  (v = ValueExpression[value=32]; (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a]))))
+Symbol Table: 
+  a -> RefValue(1, Int)
+  v -> 10
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+1 -> 22
+---------------------
+
+=== Program State ===
+ID: 10
+Execution Stack: 
+  print(readHeap(VariableExpression[varName=a]))
+Symbol Table: 
+  a -> RefValue(1, Int)
+  v -> 10
+Output: 
+  10
+File Table: 
+{empty}
+Heap: 
+1 -> 30
+---------------------
+
+=== Program State ===
+ID: 11
+Execution Stack: 
+  (v = ValueExpression[value=32]; (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a]))))
+Symbol Table: 
+  a -> RefValue(1, Int)
+  v -> 10
+Output: 
+  10
+File Table: 
+{empty}
+Heap: 
+1 -> 30
+---------------------
+
+=== Program State ===
+ID: 10
+Execution Stack: 
+  print(readHeap(VariableExpression[varName=a]))
+Symbol Table: 
+  a -> RefValue(1, Int)
+  v -> 10
+Output: 
+  10
+File Table: 
+{empty}
+Heap: 
+1 -> 30
+---------------------
+
+=== Program State ===
+ID: 11
+Execution Stack: 
+  (v = ValueExpression[value=32]; (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a]))))
+Symbol Table: 
+  a -> RefValue(1, Int)
+  v -> 10
+Output: 
+  10
+File Table: 
+{empty}
+Heap: 
+1 -> 30
+---------------------
+
+=== Program State ===
+ID: 10
+Execution Stack: 
+  {empty}
+Symbol Table: 
+  a -> RefValue(1, Int)
+  v -> 10
+Output: 
+  10
+  30
+File Table: 
+{empty}
+Heap: 
+1 -> 30
+---------------------
+
+=== Program State ===
+ID: 11
+Execution Stack: 
+  v = ValueExpression[value=32]
+  (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a])))
+Symbol Table: 
+  a -> RefValue(1, Int)
+  v -> 10
+Output: 
+  10
+  30
+File Table: 
+{empty}
+Heap: 
+1 -> 30
+---------------------
+
+=== Program State ===
+ID: 11
+Execution Stack: 
+  v = ValueExpression[value=32]
+  (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a])))
+Symbol Table: 
+  a -> RefValue(1, Int)
+  v -> 10
+Output: 
+  10
+  30
+File Table: 
+{empty}
+Heap: 
+1 -> 30
+---------------------
+
+=== Program State ===
+ID: 11
+Execution Stack: 
+  (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a])))
+Symbol Table: 
+  a -> RefValue(1, Int)
+  v -> 32
+Output: 
+  10
+  30
+File Table: 
+{empty}
+Heap: 
+1 -> 30
+---------------------
+
+=== Program State ===
+ID: 11
+Execution Stack: 
+  (print(VariableExpression[varName=v]); print(readHeap(VariableExpression[varName=a])))
+Symbol Table: 
+  a -> RefValue(1, Int)
+  v -> 32
+Output: 
+  10
+  30
+File Table: 
+{empty}
+Heap: 
+1 -> 30
+---------------------
+
+=== Program State ===
+ID: 11
+Execution Stack: 
+  print(VariableExpression[varName=v])
+  print(readHeap(VariableExpression[varName=a]))
+Symbol Table: 
+  a -> RefValue(1, Int)
+  v -> 32
+Output: 
+  10
+  30
+File Table: 
+{empty}
+Heap: 
+1 -> 30
+---------------------
+
+=== Program State ===
+ID: 11
+Execution Stack: 
+  print(VariableExpression[varName=v])
+  print(readHeap(VariableExpression[varName=a]))
+Symbol Table: 
+  a -> RefValue(1, Int)
+  v -> 32
+Output: 
+  10
+  30
+File Table: 
+{empty}
+Heap: 
+1 -> 30
+---------------------
+
+=== Program State ===
+ID: 11
+Execution Stack: 
+  print(readHeap(VariableExpression[varName=a]))
+Symbol Table: 
+  a -> RefValue(1, Int)
+  v -> 32
+Output: 
+  10
+  30
+  32
+File Table: 
+{empty}
+Heap: 
+1 -> 30
+---------------------
+
+=== Program State ===
+ID: 11
+Execution Stack: 
+  print(readHeap(VariableExpression[varName=a]))
+Symbol Table: 
+  a -> RefValue(1, Int)
+  v -> 32
+Output: 
+  10
+  30
+  32
+File Table: 
+{empty}
+Heap: 
+1 -> 30
+---------------------
+
+=== Program State ===
+ID: 11
+Execution Stack: 
+  {empty}
+Symbol Table: 
+  a -> RefValue(1, Int)
+  v -> 32
+Output: 
+  10
+  30
+  32
+  30
+File Table: 
+{empty}
+Heap: 
+1 -> 30
+---------------------
+

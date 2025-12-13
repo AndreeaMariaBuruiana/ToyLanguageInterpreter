@@ -39,6 +39,16 @@ public class MapDictionary<K,V> implements IDictionary<K,V> {
     }
 
     @Override
+    public IDictionary<K, V> deepCopy() {
+
+        IDictionary<K,V> newDict = new MapDictionary<>();
+        for (K key : symbolTable.keySet()){
+            newDict.put(key, symbolTable.get(key));
+        }
+        return newDict;
+    }
+
+    @Override
     public String toString() {
         if (symbolTable.isEmpty()) {
             return "  {empty}\n";

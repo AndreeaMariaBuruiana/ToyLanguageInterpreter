@@ -33,7 +33,7 @@ public record CloseRFile(IExpression exp) implements IStatement{
             throw new MyException("Error closing file: " + e.getMessage());
         }
         state.fileTable().close(filename);
-        return state;
+        return null;
     }
 
     @Override

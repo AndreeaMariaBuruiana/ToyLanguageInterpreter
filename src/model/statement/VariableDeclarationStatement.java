@@ -9,7 +9,7 @@ public record VariableDeclarationStatement(String varName, IType type) implement
     public ProgramState execute(ProgramState state) throws MyException {
         var symbolTable = state.symbolTable();
         symbolTable.put(varName, type.defaultValue());
-        return state;
+        return null;
     }
 
     @Override

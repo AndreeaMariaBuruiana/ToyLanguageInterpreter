@@ -24,7 +24,7 @@ public record NewStatement(String varName, IExpression expr) implements IStateme
         Integer newAddress = state.heap().allocate();
         state.heap().put(newAddress, val);
         state.symbolTable().put(varName, new RefValue(newAddress,val.getType()));
-        return state;
+        return null;
     }
 
     @Override

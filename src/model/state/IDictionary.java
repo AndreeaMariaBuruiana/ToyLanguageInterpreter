@@ -9,4 +9,5 @@ public interface IDictionary<K,V> {
     void update(K key, V value);
     List<V> getValues();
 
+    IDictionary<K,V> deepCopy();
 }

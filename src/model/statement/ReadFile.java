@@ -59,7 +59,7 @@ public record ReadFile(IExpression exp, String varName) implements IStatement {
         }catch(IOException e){
             throw new FileException("Error reading file " + filename.val());
         }
-        return state;
+        return null;
     }
 
     @Override
