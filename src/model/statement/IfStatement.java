@@ -3,8 +3,10 @@ package model.statement;
 import exception.MyException;
 import exception.StatementException;
 import model.expression.IExpression;
+import model.state.IDictionary;
 import model.state.ProgramState;
 import model.type.BoolType;
+import model.type.IType;
 import model.value.BoolValue;
 
 public record IfStatement(IExpression expression, IStatement thenStatement, IStatement elseStatement) implements IStatement {
@@ -21,6 +23,19 @@ public record IfStatement(IExpression expression, IStatement thenStatement, ISta
             state.executionStack().push(elseStatement);
         }
         return null;
+
+    }
+
+    @Override
+    public IDictionary<String, IType> typeCheck(IDictionary<String, IType> typeEnv) throws MyException {
+        IType typeExp = expression.typecheck(typeEnv);
+        if (typeExp.equals(new BoolType())) {
+            thenStatement.typeCheck(typeEnv.deepCopy());
+            elseStatement.typeCheck(typeEnv.deepCopy());
+            return typeEnv;
+        } else {
+            throw new MyException("The condition of IF does not have the type bool!");
+        }
 
     }
 

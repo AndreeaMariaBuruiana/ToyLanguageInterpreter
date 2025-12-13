@@ -2,8 +2,10 @@ package model.statement;
 
 import exception.MyException;
 import model.expression.IExpression;
+import model.state.IDictionary;
 import model.state.ProgramState;
 import model.type.BoolType;
+import model.type.IType;
 import model.value.BoolValue;
 
 public record WhileStatement(IExpression expr, IStatement statement) implements IStatement{
@@ -19,6 +21,17 @@ public record WhileStatement(IExpression expr, IStatement statement) implements 
         }
         return null;
 
+    }
+
+    @Override
+    public IDictionary<String, IType> typeCheck(IDictionary<String, IType> typeEnv) throws MyException {
+        IType typeExp = expr.typecheck(typeEnv);
+        if (typeExp.equals(new BoolType())) {
+            statement.typeCheck(typeEnv.deepCopy());
+            return typeEnv;
+        } else {
+            throw new MyException("The condition of WHILE does not have the type bool!");
+        }
     }
 
     @Override

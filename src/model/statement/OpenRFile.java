@@ -3,7 +3,9 @@ package model.statement;
 import exception.FileAlreadyOpen;
 import exception.MyException;
 import model.expression.IExpression;
+import model.state.IDictionary;
 import model.state.ProgramState;
+import model.type.IType;
 import model.value.IValue;
 import model.value.StringValue;
 
@@ -30,6 +32,16 @@ public record OpenRFile(IExpression exp) implements IStatement {
         }
         return null;
 
+    }
+
+    @Override
+    public IDictionary<String, IType> typeCheck(IDictionary<String, IType> typeEnv) throws MyException {
+        IType typeExp = exp.typecheck(typeEnv);
+        if(typeExp.toString().equals("String")){
+            return typeEnv;
+        } else {
+            throw new MyException("OpenRFile: expression is not of type String");
+        }
     }
 
     @Override

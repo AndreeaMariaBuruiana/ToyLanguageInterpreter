@@ -1,6 +1,7 @@
 package model.statement;
 
 import exception.MyException;
+import model.state.IDictionary;
 import model.state.ProgramState;
 import model.type.IType;
 
@@ -10,6 +11,12 @@ public record VariableDeclarationStatement(String varName, IType type) implement
         var symbolTable = state.symbolTable();
         symbolTable.put(varName, type.defaultValue());
         return null;
+    }
+
+    @Override
+    public IDictionary<String, IType> typeCheck(IDictionary<String, IType> typeEnv) throws MyException {
+        typeEnv.put(varName, type);
+        return typeEnv;
     }
 
     @Override

@@ -1,8 +1,11 @@
 package model.expression;
 
 import exception.LogicException;
+import exception.MyException;
 import model.state.IDictionary;
 import model.state.IHeap;
+import model.type.BoolType;
+import model.type.IType;
 import model.value.BoolValue;
 import model.value.IValue;
 
@@ -26,6 +29,18 @@ public record LogicExpression(IExpression e1, IExpression e2, String op) impleme
 
         };
 
+    }
+
+    @Override
+    public IType typecheck(IDictionary<String, IType> typeEnv) throws MyException {
+        IType t1,t2;
+        t1 = e1.typecheck(typeEnv);
+        t2 = e2.typecheck(typeEnv);
+        if(t1.equals(new BoolType()) && t2.equals(new BoolType())){
+            return new BoolType();
+        } else {
+            throw new LogicException("Logical expression: both operands must be of type bool");
+        }
     }
 
     @Override

@@ -2,7 +2,10 @@ package model.statement;
 
 import exception.MyException;
 import model.expression.IExpression;
+import model.state.IDictionary;
 import model.state.ProgramState;
+import model.type.IType;
+import model.type.RefType;
 import model.value.IValue;
 import model.value.RefValue;
 
@@ -29,6 +32,21 @@ public record WriteHeapStatement(String varName, IExpression expr) implements IS
         state.heap().put(addr, value);
         return null;
 
+    }
+
+    @Override
+    public IDictionary<String, IType> typeCheck(IDictionary<String, IType> typeEnv) throws MyException {
+        IType varType = typeEnv.lookUp(varName);
+        IType exprType = expr.typecheck(typeEnv);
+        if (varType instanceof RefType refType) {
+            if (refType.getInner().equals(exprType)) {
+                return typeEnv;
+            } else {
+                throw new MyException("WRITE HEAP statement: right hand side and left hand side have different types!");
+            }
+        } else {
+            throw new MyException("WRITE HEAP statement: variable " + varName + " is not of RefType!");
+        }
     }
 
     @Override

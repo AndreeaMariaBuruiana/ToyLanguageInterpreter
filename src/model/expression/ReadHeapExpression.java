@@ -3,6 +3,8 @@ package model.expression;
 import exception.MyException;
 import model.state.IDictionary;
 import model.state.IHeap;
+import model.type.IType;
+import model.type.RefType;
 import model.value.IValue;
 import model.value.RefValue;
 
@@ -19,6 +21,17 @@ public record ReadHeapExpression(IExpression expr) implements IExpression {
             throw new MyException("The address is not defined in the heap");
         }
         return heap.get(address);
+    }
+
+    @Override
+    public IType typecheck(IDictionary<String, IType> typeEnv) throws MyException {
+        IType t1;
+        t1 = expr.typecheck(typeEnv);
+        if (t1 instanceof RefType refType){
+            return refType.getInner();
+        } else {
+            throw new MyException("The rH argument is not a RefType");
+        }
     }
 
     @Override

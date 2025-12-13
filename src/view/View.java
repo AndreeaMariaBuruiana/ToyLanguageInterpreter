@@ -5,10 +5,7 @@ import exception.MyException;
 import model.expression.*;
 import model.state.*;
 import model.statement.*;
-import model.type.BoolType;
-import model.type.IntType;
-import model.type.RefType;
-import model.type.StringType;
+import model.type.*;
 import model.value.BoolValue;
 import model.value.IValue;
 import model.value.IntValue;
@@ -254,7 +251,18 @@ public class View {
 
     }
 
+    private static IStatement createExampleFail() {
+        // int v; v = true;  <-- ERROR: mismatch types
+        return new CompoundStatement(
+                new VariableDeclarationStatement("v", new IntType()),
+                new AssignmentStatement("v", new ValueExpression(new BoolValue(true)))
+        );
+    }
+
     private static ProgramState createPrgState(IStatement originalProgram) {
+        IDictionary<String, IType> typeEnv = new MapDictionary<>();
+        originalProgram.typeCheck(typeEnv);
+
         IExecutionStack<IStatement> exeStack = new LinkedListExecutionStack<>();
         IDictionary<String, IValue> symTable = new MapDictionary<>();
         IOut<IValue> output = new ArrayListOut<>();
@@ -267,11 +275,17 @@ public class View {
     }
 
     private static Controller createController(IStatement stmt, String logFilePath) {
-        ProgramState prgState = createPrgState(stmt);
-        List<ProgramState> prgStates = new ArrayList<>();
-        prgStates.add(prgState);
-        IRepository repo = new ArrayListRepository(prgStates, logFilePath);
-        return new Controller(repo,true);
+        try {
+            ProgramState prgState = createPrgState(stmt);
+            List<ProgramState> prgStates = new ArrayList<>();
+            prgStates.add(prgState);
+            IRepository repo = new ArrayListRepository(prgStates, logFilePath);
+            return new Controller(repo, true);
+
+        } catch (MyException e) {
+            System.out.println("Type Check Failed: " + e.getMessage());
+            return null;
+        }
     }
 
     public void run(){
@@ -287,6 +301,7 @@ public class View {
         menu.addCommand(new RunExample("8", createExample8(),createController(createExample8(), "log8.txt")));
         menu.addCommand(new RunExample("9", createExample9(),createController(createExample9(), "log9.txt")));
         menu.addCommand(new RunExample("10", createExample10(),createController(createExample10(), "log10.txt")));
+        menu.addCommand(new RunExample("11", createExampleFail(),createController(createExampleFail(), "logFail.txt")));
         menu.addCommand(new ExitCommand("0","Exit"));
 
         menu.show();

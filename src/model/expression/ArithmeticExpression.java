@@ -1,8 +1,11 @@
 package model.expression;
 
 import exception.ArithmeticException;
+import exception.MyException;
 import model.state.IDictionary;
 import model.state.IHeap;
+import model.type.IType;
+import model.type.IntType;
 import model.value.IValue;
 import model.value.IntValue;
 
@@ -26,6 +29,22 @@ public record ArithmeticExpression(IExpression left, IExpression right, char op)
             case '/' -> divide(leftTerm, rightTerm);
             default -> throw new ArithmeticException("Unknown operator");
         };
+    }
+
+    @Override
+    public IType typecheck(IDictionary<String, IType> typeEnv) throws MyException {
+        IType t1, t2;
+        t1 =left.typecheck(typeEnv);
+        t2 = right.typecheck(typeEnv);
+        if(t1.equals(new IntType())){
+            if(t2.equals(new IntType())){
+                return new IntType();
+            } else {
+                throw new MyException("Right operand is not an integer");
+            }
+        } else {
+            throw new MyException("Left operand is not an integer");
+        }
     }
 
     @Override

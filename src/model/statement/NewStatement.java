@@ -2,6 +2,7 @@ package model.statement;
 
 import exception.MyException;
 import model.expression.IExpression;
+import model.state.IDictionary;
 import model.state.ProgramState;
 import model.type.IType;
 import model.type.RefType;
@@ -25,6 +26,17 @@ public record NewStatement(String varName, IExpression expr) implements IStateme
         state.heap().put(newAddress, val);
         state.symbolTable().put(varName, new RefValue(newAddress,val.getType()));
         return null;
+    }
+
+    @Override
+    public IDictionary<String, IType> typeCheck(IDictionary<String, IType> typeEnv) throws MyException {
+        IType varType = typeEnv.lookUp(varName);
+        IType exprType = expr.typecheck(typeEnv);
+        if (varType.equals(new RefType(exprType))) {
+            return typeEnv;
+        } else {
+            throw new MyException("NEW statement: right hand side and left hand side have different types!");
+        }
     }
 
     @Override

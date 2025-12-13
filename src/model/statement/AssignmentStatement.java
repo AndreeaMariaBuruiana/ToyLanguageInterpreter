@@ -2,7 +2,9 @@ package model.statement;
 
 import exception.MyException;
 import model.expression.IExpression;
+import model.state.IDictionary;
 import model.state.ProgramState;
+import model.type.IType;
 
 public record AssignmentStatement(String valueName, IExpression expression) implements IStatement {
 
@@ -23,6 +25,17 @@ public record AssignmentStatement(String valueName, IExpression expression) impl
 
         state.symbolTable().put(valueName, value);
         return null;
+    }
+
+    @Override
+    public IDictionary<String, IType> typeCheck(IDictionary<String, IType> typeEnv) throws MyException {
+        IType varType = typeEnv.lookUp(valueName);
+        IType exprType = expression.typecheck(typeEnv);
+        if (varType.equals(exprType)) {
+            return typeEnv;
+        } else {
+            throw new MyException("Assignment: right hand side and left hand side have different types!");
+        }
     }
 
     @Override

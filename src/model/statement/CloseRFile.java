@@ -4,7 +4,9 @@ import exception.FileException;
 import exception.InvalidTypeException;
 import exception.MyException;
 import model.expression.IExpression;
+import model.state.IDictionary;
 import model.state.ProgramState;
+import model.type.IType;
 import model.type.StringType;
 import model.value.StringValue;
 
@@ -34,6 +36,16 @@ public record CloseRFile(IExpression exp) implements IStatement{
         }
         state.fileTable().close(filename);
         return null;
+    }
+
+    @Override
+    public IDictionary<String, IType> typeCheck(IDictionary<String, IType> typeEnv) throws MyException {
+        IType typeExp = exp.typecheck(typeEnv);
+        if(typeExp.equals(new StringType())){
+            return typeEnv;
+        } else {
+            throw new MyException("CloseRFile: expression is not of type String");
+        }
     }
 
     @Override

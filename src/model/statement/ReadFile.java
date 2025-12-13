@@ -5,7 +5,9 @@ import exception.FileException;
 import exception.InvalidTypeException;
 import exception.MyException;
 import model.expression.IExpression;
+import model.state.IDictionary;
 import model.state.ProgramState;
+import model.type.IType;
 import model.type.IntType;
 import model.type.StringType;
 import model.value.IValue;
@@ -60,6 +62,19 @@ public record ReadFile(IExpression exp, String varName) implements IStatement {
             throw new FileException("Error reading file " + filename.val());
         }
         return null;
+    }
+
+    @Override
+    public IDictionary<String, IType> typeCheck(IDictionary<String, IType> typeEnv) throws MyException {
+        IType typeVar = typeEnv.lookUp(varName);
+        IType typeExp = exp.typecheck(typeEnv);
+        if(!typeVar.equals(new IntType())){
+            throw new MyException("ReadFile: variable " + varName + " is not of type int");
+        }
+        if(!typeExp.equals(new StringType())){
+            throw new MyException("ReadFile: expression is not of type string");
+        }
+        return typeEnv;
     }
 
     @Override
