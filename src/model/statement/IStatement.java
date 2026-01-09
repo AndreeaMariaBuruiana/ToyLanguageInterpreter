@@ -8,6 +8,5 @@ import model.type.IType;
 public interface IStatement {
     ProgramState execute(ProgramState state) throws MyException;
     IDictionary<String, IType> typeCheck(IDictionary<String,IType> typeEnv) throws MyException;
-
     IStatement deepCopy();
 }

@@ -35,7 +35,7 @@ public class Controller {
                 new ArrayListOut<IValue>(), new MapFileTable(), new MyHeap<>(), program));
     }
 
-    void oneStepForAllPrograms(List<ProgramState> prgList) throws InterruptedException {
+    public void oneStepForAllPrograms(List<ProgramState> prgList) throws InterruptedException {
         prgList.forEach(prg -> {
             try {
                 repository.logProgramState(prg);
@@ -57,19 +57,23 @@ public class Controller {
 
         List<ProgramState> newPrgList = executor.invokeAll(callList).stream()
                 .map(future -> {
-                    try {
-                        return future.get();
-                    } catch (InterruptedException | ExecutionException e) {
-                        System.out.println(e.getMessage());
-                        return null;
-                    }
+                    try { return future.get(); }
+                    catch (Exception e) { return null; }
                 })
                 .filter(p -> p != null)
-                .toList();
+                .collect(Collectors.toList());
 
-        prgList.addAll(newPrgList);
-        prgList.forEach(prg -> repository.logProgramState(prg));
-        repository.setProgramList(prgList);
+        List<ProgramState> currentMainList = repository.getProgramList();
+        currentMainList.addAll(newPrgList);
+
+
+        currentMainList.forEach(prg -> {
+            try { repository.logProgramState(prg); }
+            catch (MyException e) { System.out.println(e.getMessage()); }
+        });
+
+
+        repository.setProgramList(currentMainList);
 
     }
 
@@ -102,6 +106,10 @@ public class Controller {
         return programStates.stream()
                 .filter(p -> p.isNotCompleted())
                 .collect(Collectors.toList());
+    }
+
+    public IRepository getRepo() {
+        return repository;
     }
 
 }

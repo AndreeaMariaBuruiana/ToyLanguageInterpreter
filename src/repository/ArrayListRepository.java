@@ -57,7 +57,7 @@ public class ArrayListRepository implements IRepository {
 
     @Override
     public List<ProgramState> getProgramList() {
-        return programStates;
+        return this.programStates;
     }
 
     @Override

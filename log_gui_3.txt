@@ -1,0 +1,303 @@
+=== Program State ===
+ID: 2
+Execution Stack: 
+  (VariableDeclarationStatement[varName=a, type=bool]; (VariableDeclarationStatement[varName=v, type=Int]; (a = ValueExpression[value=true]; ((IF(VariableExpression[varName=a]) THEN(v = ValueExpression[value=2]) ELSE(v = ValueExpression[value=3])); print(VariableExpression[varName=v])))))
+Symbol Table: 
+  {empty}
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 2
+Execution Stack: 
+  VariableDeclarationStatement[varName=a, type=bool]
+  (VariableDeclarationStatement[varName=v, type=Int]; (a = ValueExpression[value=true]; ((IF(VariableExpression[varName=a]) THEN(v = ValueExpression[value=2]) ELSE(v = ValueExpression[value=3])); print(VariableExpression[varName=v]))))
+Symbol Table: 
+  {empty}
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 2
+Execution Stack: 
+  VariableDeclarationStatement[varName=a, type=bool]
+  (VariableDeclarationStatement[varName=v, type=Int]; (a = ValueExpression[value=true]; ((IF(VariableExpression[varName=a]) THEN(v = ValueExpression[value=2]) ELSE(v = ValueExpression[value=3])); print(VariableExpression[varName=v]))))
+Symbol Table: 
+  {empty}
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 2
+Execution Stack: 
+  (VariableDeclarationStatement[varName=v, type=Int]; (a = ValueExpression[value=true]; ((IF(VariableExpression[varName=a]) THEN(v = ValueExpression[value=2]) ELSE(v = ValueExpression[value=3])); print(VariableExpression[varName=v]))))
+Symbol Table: 
+  a -> false
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 2
+Execution Stack: 
+  (VariableDeclarationStatement[varName=v, type=Int]; (a = ValueExpression[value=true]; ((IF(VariableExpression[varName=a]) THEN(v = ValueExpression[value=2]) ELSE(v = ValueExpression[value=3])); print(VariableExpression[varName=v]))))
+Symbol Table: 
+  a -> false
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 2
+Execution Stack: 
+  VariableDeclarationStatement[varName=v, type=Int]
+  (a = ValueExpression[value=true]; ((IF(VariableExpression[varName=a]) THEN(v = ValueExpression[value=2]) ELSE(v = ValueExpression[value=3])); print(VariableExpression[varName=v])))
+Symbol Table: 
+  a -> false
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 2
+Execution Stack: 
+  VariableDeclarationStatement[varName=v, type=Int]
+  (a = ValueExpression[value=true]; ((IF(VariableExpression[varName=a]) THEN(v = ValueExpression[value=2]) ELSE(v = ValueExpression[value=3])); print(VariableExpression[varName=v])))
+Symbol Table: 
+  a -> false
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 2
+Execution Stack: 
+  (a = ValueExpression[value=true]; ((IF(VariableExpression[varName=a]) THEN(v = ValueExpression[value=2]) ELSE(v = ValueExpression[value=3])); print(VariableExpression[varName=v])))
+Symbol Table: 
+  a -> false
+  v -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 2
+Execution Stack: 
+  (a = ValueExpression[value=true]; ((IF(VariableExpression[varName=a]) THEN(v = ValueExpression[value=2]) ELSE(v = ValueExpression[value=3])); print(VariableExpression[varName=v])))
+Symbol Table: 
+  a -> false
+  v -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 2
+Execution Stack: 
+  a = ValueExpression[value=true]
+  ((IF(VariableExpression[varName=a]) THEN(v = ValueExpression[value=2]) ELSE(v = ValueExpression[value=3])); print(VariableExpression[varName=v]))
+Symbol Table: 
+  a -> false
+  v -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 2
+Execution Stack: 
+  a = ValueExpression[value=true]
+  ((IF(VariableExpression[varName=a]) THEN(v = ValueExpression[value=2]) ELSE(v = ValueExpression[value=3])); print(VariableExpression[varName=v]))
+Symbol Table: 
+  a -> false
+  v -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 2
+Execution Stack: 
+  ((IF(VariableExpression[varName=a]) THEN(v = ValueExpression[value=2]) ELSE(v = ValueExpression[value=3])); print(VariableExpression[varName=v]))
+Symbol Table: 
+  a -> true
+  v -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 2
+Execution Stack: 
+  ((IF(VariableExpression[varName=a]) THEN(v = ValueExpression[value=2]) ELSE(v = ValueExpression[value=3])); print(VariableExpression[varName=v]))
+Symbol Table: 
+  a -> true
+  v -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 2
+Execution Stack: 
+  (IF(VariableExpression[varName=a]) THEN(v = ValueExpression[value=2]) ELSE(v = ValueExpression[value=3]))
+  print(VariableExpression[varName=v])
+Symbol Table: 
+  a -> true
+  v -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 2
+Execution Stack: 
+  (IF(VariableExpression[varName=a]) THEN(v = ValueExpression[value=2]) ELSE(v = ValueExpression[value=3]))
+  print(VariableExpression[varName=v])
+Symbol Table: 
+  a -> true
+  v -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 2
+Execution Stack: 
+  v = ValueExpression[value=2]
+  print(VariableExpression[varName=v])
+Symbol Table: 
+  a -> true
+  v -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 2
+Execution Stack: 
+  v = ValueExpression[value=2]
+  print(VariableExpression[varName=v])
+Symbol Table: 
+  a -> true
+  v -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 2
+Execution Stack: 
+  print(VariableExpression[varName=v])
+Symbol Table: 
+  a -> true
+  v -> 2
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 2
+Execution Stack: 
+  print(VariableExpression[varName=v])
+Symbol Table: 
+  a -> true
+  v -> 2
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 2
+Execution Stack: 
+  {empty}
+Symbol Table: 
+  a -> true
+  v -> 2
+Output: 
+  2
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+

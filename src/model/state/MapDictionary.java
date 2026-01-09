@@ -61,6 +61,11 @@ public class MapDictionary<K,V> implements IDictionary<K,V> {
         return sb.toString();
     }
 
+    @Override
+    public Map<K, V> getContent() {
+        return symbolTable;
+    }
+
 
 
 

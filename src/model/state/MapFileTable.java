@@ -52,4 +52,9 @@ public class MapFileTable implements IFileTable {
 
         return builder.toString();
     }
+
+    @Override
+    public Map<StringValue, BufferedReader> getContent() {
+        return fileTable;
+    }
 }

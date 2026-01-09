@@ -23,4 +23,9 @@ public class ArrayListOut<T> implements IOut<T> {
         }
         return sb.toString();
     }
+
+    @Override
+    public List<T> getValues() {
+        return values;
+    }
 }

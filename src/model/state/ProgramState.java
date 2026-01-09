@@ -57,6 +57,7 @@ public class ProgramState {
     public IOut<IValue> out() { return out; }
     public IFileTable fileTable() { return fileTable; }
     public IHeap<Integer, IValue> heap() { return heap; }
+    public int getId() { return id; }
 
     public Boolean isNotCompleted() {
         return !executionStack.isEmpty();
@@ -77,7 +78,6 @@ public class ProgramState {
                 usedAddr.add(((RefValue) value).address());
             }
         }
-
         return usedAddr;
     }
 

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="view.MainWindowController" prefWidth="900" prefHeight="700">
+    <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 10;">
+        <Label text="Number of PrgStates:"/>
+        <TextField fx:id="numberOfPrgStatesTextField" editable="false"/>
+    </HBox>
+
+    <GridPane hgap="10" vgap="10" VBox.vgrow="ALWAYS" style="-fx-padding: 10;">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+
+        <VBox GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <Label text="Heap Table"/>
+            <TableView fx:id="heapTableView" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="heapAddressColumn" text="Address" prefWidth="100"/>
+                    <TableColumn fx:id="heapValueColumn" text="Value" prefWidth="300"/>
+                </columns>
+            </TableView>
+        </VBox>
+
+        <VBox GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <Label text="Out"/>
+            <ListView fx:id="outputListView" VBox.vgrow="ALWAYS"/>
+        </VBox>
+
+        <VBox GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <Label text="File Table"/>
+            <ListView fx:id="fileTableListView" VBox.vgrow="ALWAYS"/>
+        </VBox>
+
+        <VBox GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Label text="PrgState Identifiers"/>
+            <ListView fx:id="prgStateIdentifiersListView" VBox.vgrow="ALWAYS"/>
+        </VBox>
+
+        <VBox GridPane.columnIndex="0" GridPane.rowIndex="2">
+            <Label text="Symbol Table"/>
+            <TableView fx:id="symTableView" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="symTableVarNameColumn" text="Variable Name" prefWidth="150"/>
+                    <TableColumn fx:id="symTableValueColumn" text="Value" prefWidth="250"/>
+                </columns>
+            </TableView>
+        </VBox>
+
+        <VBox GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Label text="Execution Stack"/>
+            <ListView fx:id="exeStackListView" VBox.vgrow="ALWAYS"/>
+        </VBox>
+    </GridPane>
+
+    <HBox alignment="CENTER" style="-fx-padding: 10;">
+        <Button fx:id="runOneStepButton" text="Run One Step" onAction="#runOneStep" prefWidth="250" style="-fx-font-size: 14px;"/>
+    </HBox>
+</VBox>

@@ -4,6 +4,7 @@ import exception.EmptyStackException;
 import model.statement.IStatement;
 
 import java.util.LinkedList;
+import java.util.List;
 
 
 public class LinkedListExecutionStack<T> implements IExecutionStack<T> {
@@ -38,5 +39,10 @@ public class LinkedListExecutionStack<T> implements IExecutionStack<T> {
             sb.append("  ").append(item).append("\n");
         }
         return sb.toString();
+    }
+
+    @Override
+    public List<T> getReversedList() {
+        return stack;
     }
 }

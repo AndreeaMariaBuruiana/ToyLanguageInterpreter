@@ -1,0 +1,542 @@
+=== Program State ===
+ID: 1
+Execution Stack: 
+  (VariableDeclarationStatement[varName=a, type=Int]; (VariableDeclarationStatement[varName=b, type=Int]; (a = ArithmeticExpression[left=ValueExpression[value=2], right=ArithmeticExpression[left=ValueExpression[value=3], right=ValueExpression[value=5], op=*], op=+]; (b = ArithmeticExpression[left=VariableExpression[varName=a], right=ValueExpression[value=1], op=+]; print(VariableExpression[varName=b])))))
+Symbol Table: 
+  {empty}
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 1
+Execution Stack: 
+  VariableDeclarationStatement[varName=a, type=Int]
+  (VariableDeclarationStatement[varName=b, type=Int]; (a = ArithmeticExpression[left=ValueExpression[value=2], right=ArithmeticExpression[left=ValueExpression[value=3], right=ValueExpression[value=5], op=*], op=+]; (b = ArithmeticExpression[left=VariableExpression[varName=a], right=ValueExpression[value=1], op=+]; print(VariableExpression[varName=b]))))
+Symbol Table: 
+  {empty}
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 1
+Execution Stack: 
+  VariableDeclarationStatement[varName=a, type=Int]
+  (VariableDeclarationStatement[varName=b, type=Int]; (a = ArithmeticExpression[left=ValueExpression[value=2], right=ArithmeticExpression[left=ValueExpression[value=3], right=ValueExpression[value=5], op=*], op=+]; (b = ArithmeticExpression[left=VariableExpression[varName=a], right=ValueExpression[value=1], op=+]; print(VariableExpression[varName=b]))))
+Symbol Table: 
+  {empty}
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 1
+Execution Stack: 
+  (VariableDeclarationStatement[varName=b, type=Int]; (a = ArithmeticExpression[left=ValueExpression[value=2], right=ArithmeticExpression[left=ValueExpression[value=3], right=ValueExpression[value=5], op=*], op=+]; (b = ArithmeticExpression[left=VariableExpression[varName=a], right=ValueExpression[value=1], op=+]; print(VariableExpression[varName=b]))))
+Symbol Table: 
+  a -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 1
+Execution Stack: 
+  (VariableDeclarationStatement[varName=b, type=Int]; (a = ArithmeticExpression[left=ValueExpression[value=2], right=ArithmeticExpression[left=ValueExpression[value=3], right=ValueExpression[value=5], op=*], op=+]; (b = ArithmeticExpression[left=VariableExpression[varName=a], right=ValueExpression[value=1], op=+]; print(VariableExpression[varName=b]))))
+Symbol Table: 
+  a -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 1
+Execution Stack: 
+  VariableDeclarationStatement[varName=b, type=Int]
+  (a = ArithmeticExpression[left=ValueExpression[value=2], right=ArithmeticExpression[left=ValueExpression[value=3], right=ValueExpression[value=5], op=*], op=+]; (b = ArithmeticExpression[left=VariableExpression[varName=a], right=ValueExpression[value=1], op=+]; print(VariableExpression[varName=b])))
+Symbol Table: 
+  a -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 1
+Execution Stack: 
+  VariableDeclarationStatement[varName=b, type=Int]
+  (a = ArithmeticExpression[left=ValueExpression[value=2], right=ArithmeticExpression[left=ValueExpression[value=3], right=ValueExpression[value=5], op=*], op=+]; (b = ArithmeticExpression[left=VariableExpression[varName=a], right=ValueExpression[value=1], op=+]; print(VariableExpression[varName=b])))
+Symbol Table: 
+  a -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 1
+Execution Stack: 
+  (a = ArithmeticExpression[left=ValueExpression[value=2], right=ArithmeticExpression[left=ValueExpression[value=3], right=ValueExpression[value=5], op=*], op=+]; (b = ArithmeticExpression[left=VariableExpression[varName=a], right=ValueExpression[value=1], op=+]; print(VariableExpression[varName=b])))
+Symbol Table: 
+  a -> 0
+  b -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 1
+Execution Stack: 
+  (a = ArithmeticExpression[left=ValueExpression[value=2], right=ArithmeticExpression[left=ValueExpression[value=3], right=ValueExpression[value=5], op=*], op=+]; (b = ArithmeticExpression[left=VariableExpression[varName=a], right=ValueExpression[value=1], op=+]; print(VariableExpression[varName=b])))
+Symbol Table: 
+  a -> 0
+  b -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 1
+Execution Stack: 
+  a = ArithmeticExpression[left=ValueExpression[value=2], right=ArithmeticExpression[left=ValueExpression[value=3], right=ValueExpression[value=5], op=*], op=+]
+  (b = ArithmeticExpression[left=VariableExpression[varName=a], right=ValueExpression[value=1], op=+]; print(VariableExpression[varName=b]))
+Symbol Table: 
+  a -> 0
+  b -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 1
+Execution Stack: 
+  a = ArithmeticExpression[left=ValueExpression[value=2], right=ArithmeticExpression[left=ValueExpression[value=3], right=ValueExpression[value=5], op=*], op=+]
+  (b = ArithmeticExpression[left=VariableExpression[varName=a], right=ValueExpression[value=1], op=+]; print(VariableExpression[varName=b]))
+Symbol Table: 
+  a -> 0
+  b -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 1
+Execution Stack: 
+  (b = ArithmeticExpression[left=VariableExpression[varName=a], right=ValueExpression[value=1], op=+]; print(VariableExpression[varName=b]))
+Symbol Table: 
+  a -> 17
+  b -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 1
+Execution Stack: 
+  (b = ArithmeticExpression[left=VariableExpression[varName=a], right=ValueExpression[value=1], op=+]; print(VariableExpression[varName=b]))
+Symbol Table: 
+  a -> 17
+  b -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 1
+Execution Stack: 
+  b = ArithmeticExpression[left=VariableExpression[varName=a], right=ValueExpression[value=1], op=+]
+  print(VariableExpression[varName=b])
+Symbol Table: 
+  a -> 17
+  b -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 1
+Execution Stack: 
+  b = ArithmeticExpression[left=VariableExpression[varName=a], right=ValueExpression[value=1], op=+]
+  print(VariableExpression[varName=b])
+Symbol Table: 
+  a -> 17
+  b -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 1
+Execution Stack: 
+  print(VariableExpression[varName=b])
+Symbol Table: 
+  a -> 17
+  b -> 18
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 1
+Execution Stack: 
+  print(VariableExpression[varName=b])
+Symbol Table: 
+  a -> 17
+  b -> 18
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 1
+Execution Stack: 
+  {empty}
+Symbol Table: 
+  a -> 17
+  b -> 18
+Output: 
+  18
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 1
+Execution Stack: 
+  (VariableDeclarationStatement[varName=a, type=Int]; (VariableDeclarationStatement[varName=b, type=Int]; (a = ArithmeticExpression[left=ValueExpression[value=2], right=ArithmeticExpression[left=ValueExpression[value=3], right=ValueExpression[value=5], op=*], op=+]; (b = ArithmeticExpression[left=VariableExpression[varName=a], right=ValueExpression[value=1], op=+]; print(VariableExpression[varName=b])))))
+Symbol Table: 
+  {empty}
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 1
+Execution Stack: 
+  VariableDeclarationStatement[varName=a, type=Int]
+  (VariableDeclarationStatement[varName=b, type=Int]; (a = ArithmeticExpression[left=ValueExpression[value=2], right=ArithmeticExpression[left=ValueExpression[value=3], right=ValueExpression[value=5], op=*], op=+]; (b = ArithmeticExpression[left=VariableExpression[varName=a], right=ValueExpression[value=1], op=+]; print(VariableExpression[varName=b]))))
+Symbol Table: 
+  {empty}
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 1
+Execution Stack: 
+  VariableDeclarationStatement[varName=a, type=Int]
+  (VariableDeclarationStatement[varName=b, type=Int]; (a = ArithmeticExpression[left=ValueExpression[value=2], right=ArithmeticExpression[left=ValueExpression[value=3], right=ValueExpression[value=5], op=*], op=+]; (b = ArithmeticExpression[left=VariableExpression[varName=a], right=ValueExpression[value=1], op=+]; print(VariableExpression[varName=b]))))
+Symbol Table: 
+  {empty}
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 1
+Execution Stack: 
+  (VariableDeclarationStatement[varName=b, type=Int]; (a = ArithmeticExpression[left=ValueExpression[value=2], right=ArithmeticExpression[left=ValueExpression[value=3], right=ValueExpression[value=5], op=*], op=+]; (b = ArithmeticExpression[left=VariableExpression[varName=a], right=ValueExpression[value=1], op=+]; print(VariableExpression[varName=b]))))
+Symbol Table: 
+  a -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 1
+Execution Stack: 
+  (VariableDeclarationStatement[varName=b, type=Int]; (a = ArithmeticExpression[left=ValueExpression[value=2], right=ArithmeticExpression[left=ValueExpression[value=3], right=ValueExpression[value=5], op=*], op=+]; (b = ArithmeticExpression[left=VariableExpression[varName=a], right=ValueExpression[value=1], op=+]; print(VariableExpression[varName=b]))))
+Symbol Table: 
+  a -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 1
+Execution Stack: 
+  VariableDeclarationStatement[varName=b, type=Int]
+  (a = ArithmeticExpression[left=ValueExpression[value=2], right=ArithmeticExpression[left=ValueExpression[value=3], right=ValueExpression[value=5], op=*], op=+]; (b = ArithmeticExpression[left=VariableExpression[varName=a], right=ValueExpression[value=1], op=+]; print(VariableExpression[varName=b])))
+Symbol Table: 
+  a -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 1
+Execution Stack: 
+  VariableDeclarationStatement[varName=b, type=Int]
+  (a = ArithmeticExpression[left=ValueExpression[value=2], right=ArithmeticExpression[left=ValueExpression[value=3], right=ValueExpression[value=5], op=*], op=+]; (b = ArithmeticExpression[left=VariableExpression[varName=a], right=ValueExpression[value=1], op=+]; print(VariableExpression[varName=b])))
+Symbol Table: 
+  a -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 1
+Execution Stack: 
+  (a = ArithmeticExpression[left=ValueExpression[value=2], right=ArithmeticExpression[left=ValueExpression[value=3], right=ValueExpression[value=5], op=*], op=+]; (b = ArithmeticExpression[left=VariableExpression[varName=a], right=ValueExpression[value=1], op=+]; print(VariableExpression[varName=b])))
+Symbol Table: 
+  a -> 0
+  b -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 1
+Execution Stack: 
+  (a = ArithmeticExpression[left=ValueExpression[value=2], right=ArithmeticExpression[left=ValueExpression[value=3], right=ValueExpression[value=5], op=*], op=+]; (b = ArithmeticExpression[left=VariableExpression[varName=a], right=ValueExpression[value=1], op=+]; print(VariableExpression[varName=b])))
+Symbol Table: 
+  a -> 0
+  b -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 1
+Execution Stack: 
+  a = ArithmeticExpression[left=ValueExpression[value=2], right=ArithmeticExpression[left=ValueExpression[value=3], right=ValueExpression[value=5], op=*], op=+]
+  (b = ArithmeticExpression[left=VariableExpression[varName=a], right=ValueExpression[value=1], op=+]; print(VariableExpression[varName=b]))
+Symbol Table: 
+  a -> 0
+  b -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 1
+Execution Stack: 
+  a = ArithmeticExpression[left=ValueExpression[value=2], right=ArithmeticExpression[left=ValueExpression[value=3], right=ValueExpression[value=5], op=*], op=+]
+  (b = ArithmeticExpression[left=VariableExpression[varName=a], right=ValueExpression[value=1], op=+]; print(VariableExpression[varName=b]))
+Symbol Table: 
+  a -> 0
+  b -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 1
+Execution Stack: 
+  (b = ArithmeticExpression[left=VariableExpression[varName=a], right=ValueExpression[value=1], op=+]; print(VariableExpression[varName=b]))
+Symbol Table: 
+  a -> 17
+  b -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 1
+Execution Stack: 
+  (b = ArithmeticExpression[left=VariableExpression[varName=a], right=ValueExpression[value=1], op=+]; print(VariableExpression[varName=b]))
+Symbol Table: 
+  a -> 17
+  b -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 1
+Execution Stack: 
+  b = ArithmeticExpression[left=VariableExpression[varName=a], right=ValueExpression[value=1], op=+]
+  print(VariableExpression[varName=b])
+Symbol Table: 
+  a -> 17
+  b -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 1
+Execution Stack: 
+  b = ArithmeticExpression[left=VariableExpression[varName=a], right=ValueExpression[value=1], op=+]
+  print(VariableExpression[varName=b])
+Symbol Table: 
+  a -> 17
+  b -> 0
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 1
+Execution Stack: 
+  print(VariableExpression[varName=b])
+Symbol Table: 
+  a -> 17
+  b -> 18
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 1
+Execution Stack: 
+  print(VariableExpression[varName=b])
+Symbol Table: 
+  a -> 17
+  b -> 18
+Output: 
+  {empty}
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+
+=== Program State ===
+ID: 1
+Execution Stack: 
+  {empty}
+Symbol Table: 
+  a -> 17
+  b -> 18
+Output: 
+  18
+File Table: 
+{empty}
+Heap: 
+{empty heap}
+---------------------
+

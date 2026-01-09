@@ -22,14 +22,14 @@ import java.util.concurrent.Executors;
 
 public class View {
 
-    private static IStatement createExample1() {
+    public static IStatement createExample1() {
         // int v; v=2; Print(v)
         return new CompoundStatement(new VariableDeclarationStatement("v", new IntType()),
                 new CompoundStatement(new AssignmentStatement("v", new ValueExpression(new IntValue(2))),
                         new PrintStatement(new VariableExpression("v"))));
     }
 
-    private static IStatement createExample2() {
+    public static IStatement createExample2() {
         return new CompoundStatement(
                 new VariableDeclarationStatement("a", new IntType()),
                 new CompoundStatement(
@@ -53,7 +53,7 @@ public class View {
 
     }
 
-    private static IStatement createExample3() {
+    public static IStatement createExample3() {
         return new CompoundStatement(
                 new VariableDeclarationStatement("a",new BoolType()),
                 new CompoundStatement(
@@ -73,7 +73,7 @@ public class View {
         );
     }
 
-    private static IStatement createExample4() {
+    public static IStatement createExample4() {
         // string varf; varf = "test.in"; openRFile(varf); int varc; readFile(varf,
         // varc); Print(varc); readFile(varf, varc); Print(varc); closeRFile(varf);
         return new CompoundStatement(
@@ -88,7 +88,7 @@ public class View {
                                                                         new CloseRFile(new VariableExpression("varf"))))))))));
     }
 
-    private static IStatement createExample5() {
+    public static IStatement createExample5() {
         // Ref int v; new(v,20); Ref Ref int a; new(a,v); print(v), print(a);
         return new CompoundStatement(
                 new VariableDeclarationStatement("v", new model.type.RefType(new IntType())),
@@ -108,7 +108,7 @@ public class View {
         );
     }
 
-    private static IStatement createExample6() {
+    public static IStatement createExample6() {
         // Ref int v; new(v,20); Ref Ref int a; new(a,v); print(rH(v)), print(rH(rH(a))+5);
         return new CompoundStatement(
                 new VariableDeclarationStatement("v", new model.type.RefType(new IntType())),
@@ -136,7 +136,7 @@ public class View {
         );
     }
 
-    private static IStatement createExample7() {
+    public static IStatement createExample7() {
         // Ref int v; new(v,20); print(rH(v)); wH(v,30); print(rH(v)+5);
         return new CompoundStatement(
                 new VariableDeclarationStatement("v", new model.type.RefType(new IntType())),
@@ -159,7 +159,7 @@ public class View {
         );
     }
 
-    private static IStatement createExample8() {
+    public static IStatement createExample8() {
         //int v; v = 4; (while (v > 0) print(v); v = v - 1); print(v)
         return new CompoundStatement(
                 new VariableDeclarationStatement("v", new IntType()),
@@ -188,7 +188,7 @@ public class View {
         );
     }
 
-    private static IStatement createExample9() {
+    public static IStatement createExample9() {
         //Ref int v;new(v,20);Ref Ref int a; new(a,v); new(v,30);print(rH(rH(a)))
         return new CompoundStatement(
                 new VariableDeclarationStatement("v", new model.type.RefType(new IntType())),
@@ -212,7 +212,7 @@ public class View {
         );
     }
 
-    private static IStatement createExample10() {
+    public static IStatement createExample10() {
         // int v; Ref int a; v=10; new(a,22);
         // fork(wH(a,30);v=32;print(v);print(rH(a)));
         // print(v);print(rH(a))
@@ -251,7 +251,7 @@ public class View {
 
     }
 
-    private static IStatement createExampleFail() {
+    public static IStatement createExampleFail() {
         // int v; v = true;  <-- ERROR: mismatch types
         return new CompoundStatement(
                 new VariableDeclarationStatement("v", new IntType()),
@@ -259,7 +259,7 @@ public class View {
         );
     }
 
-    private static ProgramState createPrgState(IStatement originalProgram) {
+    public static ProgramState createPrgState(IStatement originalProgram) {
         IDictionary<String, IType> typeEnv = new MapDictionary<>();
         originalProgram.typeCheck(typeEnv);
 
